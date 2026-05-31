@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="theme-color" content="#0E1A2B">
+<title>Artificial Intelligence — Solutions &amp; Services | Genosis</title>
+<meta name="description" content="Genosis engineers AI agents and generative AI use cases aligned to prioritized operational backlogs. We move from use case definition to production…">
+<link rel="canonical" href="https://genosis.io/solution-ai.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="topbar">
+  Active engagements across the Americas, Africa, Europe, and Asia. <a href="markets.html">View markets →</a>
+</div>
+<nav class="top">
+  <div class="nav-inner">
+    <a class="logo-mark" href="index.html" aria-label="Genosis — Home">GENOSIS</a>
+
+    <ul class="nav-menu" id="navMenu">
+      <li>
+        <a class="nav-link" data-page="approach" href="approach.html">Approach</a>
+      </li>
+
+      <li data-menu="programs">
+        <a class="nav-link" onclick="toggleDropdown(event, 'programs')" aria-haspopup="true" aria-expanded="false">
+          Programs
+          <span class="nav-chev"></span>
+        </a>
+        <div class="dropdown wide align-center">
+          <div class="dropdown-panel">
+            <div class="dropdown-header">Infrastructure programs</div>
+            <div class="dropdown-grid">
+              <a class="dropdown-item" href="program-identity.html">
+                <span class="di-name">Digital ID</span>
+                <span class="di-desc">Verified onboarding infrastructure</span>
+              </a>
+              <a class="dropdown-item" href="program-payments.html">
+                <span class="di-name">Banking &amp; Payments</span>
+                <span class="di-desc">Transactional infrastructure systems</span>
+              </a>
+              <a class="dropdown-item" href="program-logistics.html">
+                <span class="di-name">Logistics</span>
+                <span class="di-desc">Movement, coordination, distribution</span>
+              </a>
+              <a class="dropdown-item" href="program-healthcare.html">
+                <span class="di-name">Healthcare</span>
+                <span class="di-desc">Health record &amp; delivery systems</span>
+              </a>
+              <a class="dropdown-item" href="program-data.html">
+                <span class="di-name">Data &amp; Digitization</span>
+                <span class="di-desc">Records, insight, structured data</span>
+              </a>
+              <a class="dropdown-item" href="program-datacenter.html">
+                <span class="di-name">Data Centers</span>
+                <span class="di-desc">Sovereign data center build-out</span>
+              </a>
+              <a class="dropdown-item" href="program-pm.html">
+                <span class="di-name">Enterprise Management Systems</span>
+                <span class="di-desc">Institutional execution layer</span>
+              </a>
+              <a class="dropdown-item" href="program-education.html">
+                <span class="di-name">Education &amp; Training</span>
+                <span class="di-desc">Institutional learning systems</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li data-menu="industries">
+        <a class="nav-link" onclick="toggleDropdown(event, 'industries')" aria-haspopup="true" aria-expanded="false">
+          Industries
+          <span class="nav-chev"></span>
+        </a>
+        <div class="dropdown wide extra-wide align-center">
+          <div class="dropdown-panel">
+            <div class="dropdown-header">Industry solutions</div>
+            <div class="dropdown-grid cols-3">
+              <a class="dropdown-item" href="industry-public.html">
+                <span class="di-name">Public Service</span>
+              </a>
+              <a class="dropdown-item" href="industry-government.html">
+                <span class="di-name">Global Government</span>
+              </a>
+              <a class="dropdown-item" href="industry-healthcare.html">
+                <span class="di-name">Healthcare</span>
+              </a>
+              <a class="dropdown-item" href="industry-banking.html">
+                <span class="di-name">Banking</span>
+              </a>
+              <a class="dropdown-item" href="industry-financial.html">
+                <span class="di-name">Financial Services</span>
+              </a>
+              <a class="dropdown-item" href="industry-insurance.html">
+                <span class="di-name">Insurance</span>
+              </a>
+              <a class="dropdown-item" href="industry-capital-markets.html">
+                <span class="di-name">Capital Markets</span>
+              </a>
+              <a class="dropdown-item" href="industry-retail.html">
+                <span class="di-name">Retail</span>
+              </a>
+              <a class="dropdown-item" href="industry-consumer-goods.html">
+                <span class="di-name">Consumer Goods</span>
+              </a>
+              <a class="dropdown-item" href="industry-industrial.html">
+                <span class="di-name">Industrial</span>
+              </a>
+              <a class="dropdown-item" href="industry-hightech.html">
+                <span class="di-name">High Tech</span>
+              </a>
+              <a class="dropdown-item" href="industry-automotive.html">
+                <span class="di-name">Automotive</span>
+              </a>
+              <a class="dropdown-item" href="industry-energy.html">
+                <span class="di-name">Energy</span>
+              </a>
+              <a class="dropdown-item" href="industry-utilities.html">
+                <span class="di-name">Utilities</span>
+              </a>
+              <a class="dropdown-item" href="industry-natural.html">
+                <span class="di-name">Natural Resources</span>
+              </a>
+              <a class="dropdown-item" href="industry-communications.html">
+                <span class="di-name">Communications &amp; Media</span>
+              </a>
+              <a class="dropdown-item" href="industry-travel.html">
+                <span class="di-name">Travel</span>
+              </a>
+              <a class="dropdown-item" href="industry-talent.html">
+                <span class="di-name">Talent &amp; Organization</span>
+              </a>
+              <a class="dropdown-item" href="industry-marketing.html">
+                <span class="di-name">Marketing &amp; Experience</span>
+              </a>
+              <a class="dropdown-item view-all" href="industries.html">
+                <span class="di-name">View all industries →</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li data-menu="solutions">
+        <a class="nav-link is-current" onclick="toggleDropdown(event, 'solutions')" aria-haspopup="true" aria-expanded="false">
+          Solutions
+          <span class="nav-chev"></span>
+        </a>
+        <div class="dropdown wide extra-wide align-center">
+          <div class="dropdown-panel">
+            <div class="dropdown-header">Solutions &amp; Services</div>
+            <div class="dropdown-grid cols-3">
+              <a class="dropdown-item" href="solution-strategy.html">
+                <span class="di-name">Strategy &amp; Advisory</span>
+              </a>
+              <a class="dropdown-item" href="solution-technology.html">
+                <span class="di-name">Technology Implementation</span>
+              </a>
+              <a class="dropdown-item" href="solution-application.html">
+                <span class="di-name">Application Development</span>
+              </a>
+              <a class="dropdown-item" href="solution-cloud.html">
+                <span class="di-name">Cloud Infrastructure</span>
+              </a>
+              <a class="dropdown-item" href="solution-data.html">
+                <span class="di-name">Data &amp; Analytics</span>
+              </a>
+              <a class="dropdown-item" href="solution-ai.html">
+                <span class="di-name">Artificial Intelligence</span>
+              </a>
+              <a class="dropdown-item" href="solution-security.html">
+                <span class="di-name">Cybersecurity</span>
+              </a>
+              <a class="dropdown-item" href="solution-transformation.html">
+                <span class="di-name">Digital Transformation</span>
+              </a>
+              <a class="dropdown-item" href="solution-operations.html">
+                <span class="di-name">Operations &amp; Process</span>
+              </a>
+              <a class="dropdown-item" href="solution-experience.html">
+                <span class="di-name">Customer Experience</span>
+              </a>
+              <a class="dropdown-item" href="solution-talent.html">
+                <span class="di-name">Talent &amp; Organization</span>
+              </a>
+              <a class="dropdown-item" href="solution-sustainability.html">
+                <span class="di-name">Sustainability</span>
+              </a>
+              <a class="dropdown-item view-all" href="solutions.html">
+                <span class="di-name">View all solutions →</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li><a class="nav-link" data-page="services" href="services.html">Services</a></li>
+      <li><a class="nav-link" data-page="markets" href="markets.html">Markets</a></li>
+      <li><a class="nav-link" data-page="about" href="about.html">About</a></li>
+
+      <li class="nav-cta">
+        <a class="nav-link" href="contact.html">Request a briefing</a>
+      </li>
+    </ul>
+
+    <button class="mobile-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu" aria-expanded="false">
+      <span class="bars"><span></span><span></span><span></span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-backdrop" onclick="closeMobileNav()"></div>
+<aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+  <div class="drawer-header">
+    <span class="logo-mark">GENOSIS</span>
+    <button class="drawer-close" onclick="closeMobileNav()" aria-label="Close menu">×</button>
+  </div>
+
+  <ul class="drawer-menu">
+    <li><a href="approach.html">Approach</a></li>
+
+    <li data-drawer-menu="programs">
+      <button onclick="toggleDrawerSubmenu('programs')" aria-expanded="false">
+        Programs
+        <span class="drawer-chev"></span>
+      </button>
+      <div class="drawer-submenu">
+        <a href="program-identity.html">
+          <span class="ds-name">Digital ID</span>
+          <span class="ds-desc">Verified onboarding infrastructure</span>
+        </a>
+        <a href="program-payments.html">
+          <span class="ds-name">Banking &amp; Payments</span>
+          <span class="ds-desc">Transactional infrastructure systems</span>
+        </a>
+        <a href="program-logistics.html">
+          <span class="ds-name">Logistics</span>
+          <span class="ds-desc">Movement, coordination, distribution</span>
+        </a>
+        <a href="program-healthcare.html">
+          <span class="ds-name">Healthcare</span>
+          <span class="ds-desc">Health record &amp; delivery systems</span>
+        </a>
+        <a href="program-data.html">
+          <span class="ds-name">Data &amp; Digitization</span>
+          <span class="ds-desc">Records, insight, structured data</span>
+        </a>
+        <a href="program-datacenter.html">
+          <span class="ds-name">Data Centers</span>
+          <span class="ds-desc">Sovereign data center build-out</span>
+        </a>
+        <a href="program-pm.html">
+          <span class="ds-name">Enterprise Management Systems</span>
+          <span class="ds-desc">Institutional execution layer</span>
+        </a>
+        <a href="program-education.html">
+          <span class="ds-name">Education &amp; Training</span>
+          <span class="ds-desc">Institutional learning systems</span>
+        </a>
+      </div>
+    </li>
+
+    <li data-drawer-menu="industries">
+      <button onclick="toggleDrawerSubmenu('industries')" aria-expanded="false">
+        Industries
+        <span class="drawer-chev"></span>
+      </button>
+      <div class="drawer-submenu">
+        <a href="industry-public.html"><span class="ds-name">Public Service</span></a>
+        <a href="industry-government.html"><span class="ds-name">Global Government</span></a>
+        <a href="industry-healthcare.html"><span class="ds-name">Healthcare</span></a>
+        <a href="industry-banking.html"><span class="ds-name">Banking</span></a>
+        <a href="industry-financial.html"><span class="ds-name">Financial Services</span></a>
+        <a href="industry-insurance.html"><span class="ds-name">Insurance</span></a>
+        <a href="industry-capital-markets.html"><span class="ds-name">Capital Markets</span></a>
+        <a href="industry-retail.html"><span class="ds-name">Retail</span></a>
+        <a href="industry-consumer-goods.html"><span class="ds-name">Consumer Goods</span></a>
+        <a href="industry-industrial.html"><span class="ds-name">Industrial</span></a>
+        <a href="industry-hightech.html"><span class="ds-name">High Tech</span></a>
+        <a href="industry-automotive.html"><span class="ds-name">Automotive</span></a>
+        <a href="industry-energy.html"><span class="ds-name">Energy</span></a>
+        <a href="industry-utilities.html"><span class="ds-name">Utilities</span></a>
+        <a href="industry-natural.html"><span class="ds-name">Natural Resources</span></a>
+        <a href="industry-communications.html"><span class="ds-name">Communications &amp; Media</span></a>
+        <a href="industry-travel.html"><span class="ds-name">Travel</span></a>
+        <a href="industry-talent.html"><span class="ds-name">Talent &amp; Organization</span></a>
+        <a href="industry-marketing.html"><span class="ds-name">Marketing &amp; Experience</span></a>
+        <a href="industries.html"><span class="ds-name" style="color:var(--gold-dim);">View all industries →</span></a>
+      </div>
+    </li>
+
+    <li data-drawer-menu="solutions">
+      <button onclick="toggleDrawerSubmenu('solutions')" aria-expanded="false">
+        Solutions
+        <span class="drawer-chev"></span>
+      </button>
+      <div class="drawer-submenu">
+        <a href="solution-strategy.html"><span class="ds-name">Strategy &amp; Advisory</span></a>
+        <a href="solution-technology.html"><span class="ds-name">Technology Implementation</span></a>
+        <a href="solution-application.html"><span class="ds-name">Application Development</span></a>
+        <a href="solution-cloud.html"><span class="ds-name">Cloud Infrastructure</span></a>
+        <a href="solution-data.html"><span class="ds-name">Data &amp; Analytics</span></a>
+        <a href="solution-ai.html"><span class="ds-name">Artificial Intelligence</span></a>
+        <a href="solution-security.html"><span class="ds-name">Cybersecurity</span></a>
+        <a href="solution-transformation.html"><span class="ds-name">Digital Transformation</span></a>
+        <a href="solution-operations.html"><span class="ds-name">Operations &amp; Process</span></a>
+        <a href="solution-experience.html"><span class="ds-name">Customer Experience</span></a>
+        <a href="solution-talent.html"><span class="ds-name">Talent &amp; Organization</span></a>
+        <a href="solution-sustainability.html"><span class="ds-name">Sustainability</span></a>
+        <a href="solutions.html"><span class="ds-name" style="color:var(--gold-dim);">View all solutions →</span></a>
+      </div>
+    </li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="markets.html">Markets</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+
+  <div class="drawer-cta">
+    <a href="contact.html">Request a briefing</a>
+  </div>
+</aside>
+<main>
+
+<section class="page-hero">
+<div class="container">
+<div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><a href="solutions.html">Solutions</a><span class="sep">/</span><span class="current">Artificial Intelligence</span></div>
+<span class="eyebrow">Solutions / Artificial Intelligence</span>
+<h1 class="page-headline" style="margin-top:24px;">AI agents and generative AI, engineered for institutional scale.</h1>
+<p class="page-sub">Genosis engineers AI agents and generative AI use cases aligned to prioritized operational backlogs. We move from use case definition to production deployment — building agents that integrate into existing applications, business processes, and data pipelines with minimal disruption to operational continuity.</p>
+</div>
+</section>
+<section class="section-block">
+<div class="container">
+<div class="section-grid">
+<div class="section-label">AI agent development &amp; GenAI deployment</div>
+<div class="section-content">
+<p>Our AI engagements are not exploratory experiments. They start with operational backlogs — the prioritized list of institutional decisions, processes, and bottlenecks where AI can deliver measurable value — and they end with agents in production.</p>
+<p>We build AI agents that operate inside the institutional environment: integrated with existing applications, embedded in business processes, and connected to live data pipelines. The agents are designed to enhance how the institution already operates, not to require a parallel AI organization to maintain them.</p>
+<p>We work across leading enterprise AI platforms, including <strong style="color:var(--ink);font-weight:500;">Azure AI Foundry</strong> and <strong style="color:var(--ink);font-weight:500;">Orq.ai</strong>, and architect deployments to take advantage of each platform's strengths in orchestration, evaluation, and governed rollout.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="section-block tinted">
+<div class="container">
+<div class="section-grid">
+<div class="section-label">MLOps and LLMOps pipelines</div>
+<div class="section-content">
+<p>AI deployments only deliver institutional value when they are testable, observable, and maintainable. Genosis operates full MLOps and LLMOps pipelines designed to make AI capability operate as durable infrastructure rather than fragile one-time builds.</p>
+<div class="value-grid cols-2">
+<div class="value-card">
+<h5>CI/CD for models &amp; agents</h5>
+<p>Continuous integration and continuous delivery pipelines for model and agent development, with structured promotion workflows.</p>
+</div>
+<div class="value-card">
+<h5>Version control &amp; change management</h5>
+<p>Versioning across models, prompts, agents, and configuration — with full change management across environments.</p>
+</div>
+<div class="value-card">
+<h5>Automated testing &amp; evaluation</h5>
+<p>Automated testing, evaluation frameworks, and quality gates that catch regression and drift before deployment.</p>
+</div>
+<div class="value-card">
+<h5>Controlled promotion</h5>
+<p>Structured promotion from development through staging to production, with gating, observability, and rollback.</p>
+</div>
+</div>
+<p style="margin-top:32px;">Our LLMOps practice ensures that language model deployments are testable, observable, and maintainable — not opaque black boxes that institutions cannot govern or evolve.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="section-block">
+<div class="container">
+<div class="section-grid">
+<div class="section-label">Reusable AI building blocks</div>
+<div class="section-content">
+<p>Genosis develops and maintains a library of reusable AI components — accelerating deployment across new use cases without sacrificing quality or governance standards.</p>
+<ul>
+<li>Agent templates for common institutional workflows and decision patterns</li>
+<li>Prompt frameworks calibrated for accuracy, safety, and consistency</li>
+<li>Evaluation harnesses that measure model and agent performance against institutional success criteria</li>
+<li>Safety guardrails covering content, behavior, data access, and operational scope</li>
+<li>Integration adapters for common enterprise systems and data sources</li>
+<li>Observability and monitoring patterns for production AI deployments</li>
+</ul>
+<p>Each new institutional engagement contributes back to the library, so the next deployment moves faster and the quality bar continues to rise.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="section-block tinted">
+<div class="container">
+<div class="section-grid">
+<div class="section-label">Standardized AI &amp; the evolving frontier</div>
+<div class="section-content">
+<p>The AI landscape moves quickly. Models change, capabilities expand, and deployment patterns evolve month-by-month. Institutions that try to chase every release exhaust themselves; institutions that ignore the frontier fall behind.</p>
+<p>Genosis brings <strong style="color:var(--ink);font-weight:500;">institutional standardization</strong> to AI work: a consistent approach across engagements, a defined deployment architecture, governance frameworks that hold across model generations, and an evaluation methodology that allows institutions to compare options on the same terms.</p>
+<p>We continuously evaluate the latest AI capabilities — model releases, agent frameworks, evaluation tools, deployment platforms — and integrate what is genuinely useful into our standard practice. The result is institutional AI that benefits from the frontier without being destabilized by it.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="section-block">
+<div class="container">
+<div class="section-grid">
+<div class="section-label">How this fits the execution model</div>
+<div class="section-content">
+<p>AI engagements at Genosis follow the same four-stage execution model as every program — survey, design, pilot, scale — adapted for the operational and regulatory reality of AI deployment.</p>
+<p>Survey identifies the operational backlog where AI can deliver value. Design produces the agent architecture, the integration approach, the evaluation framework, and the governance model. Pilot deploys controlled use cases with structured measurement. Scale extends the deployment across the institutional environment, with the MLOps and LLMOps pipelines that allow long-term operation.</p>
+<div style="margin-top:32px;">
+<a class="btn-ghost" href="approach.html">Read the full approach</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="closing">
+<div class="container">
+<p class="closing-quote">Ready to deploy AI<br/>as institutional infrastructure?</p>
+<a class="btn-primary btn-gold" href="contact.html">Request a briefing on AI</a>
+</div>
+</section>
+
+</main>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand-logo-svg brand-logo-svg--footer" role="img" aria-label="Genosis — Solutions of Value"></div>
+        <p class="footer-tag">Genosis Inc. — Institutional advisory and digital infrastructure for governments, institutions, and organizations.</p>
+        <div class="footer-contact">
+          contact@genosis.io<br>
+          +1 (516) 849-3469<br>
+          New York, USA
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Programs</h5>
+        <ul>
+          <li><a href="program-identity.html">Digital ID</a></li>
+          <li><a href="program-payments.html">Banking &amp; Payments</a></li>
+          <li><a href="program-logistics.html">Logistics</a></li>
+          <li><a href="program-healthcare.html">Healthcare</a></li>
+          <li><a href="program-data.html">Data &amp; Digitization</a></li>
+          <li><a href="program-datacenter.html">Data Centers</a></li>
+          <li><a href="program-pm.html">Enterprise Management Systems</a></li>
+          <li><a href="program-education.html">Education &amp; Training</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Solutions</h5>
+        <ul>
+          <li><a href="solution-strategy.html">Strategy &amp; Advisory</a></li>
+          <li><a href="solution-technology.html">Technology Implementation</a></li>
+          <li><a href="solution-data.html">Data &amp; Analytics</a></li>
+          <li><a href="solution-ai.html">Artificial Intelligence</a></li>
+          <li><a href="solution-security.html">Cybersecurity</a></li>
+          <li><a href="solutions.html">View all →</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Industries</h5>
+        <ul>
+          <li><a href="industry-public.html">Public Service</a></li>
+          <li><a href="industry-healthcare.html">Healthcare</a></li>
+          <li><a href="industry-financial.html">Financial Services</a></li>
+          <li><a href="industry-banking.html">Banking</a></li>
+          <li><a href="industries.html">View all →</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="approach.html">Approach</a></li>
+          <li><a href="markets.html">Markets</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Engagement</h5>
+        <ul>
+          <li><a href="contact.html">Request a briefing</a></li>
+          <li><a href="contact.html">Partnership inquiry</a></li>
+          <li><a href="contact.html">General inquiry</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <div>© 2026 Genosis Inc. All rights reserved.</div>
+      <div>
+        <a>Privacy</a>
+        <a>Terms</a>
+        <a>Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>

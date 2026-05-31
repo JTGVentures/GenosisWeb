@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="theme-color" content="#0E1A2B">
+<title>Genosis — Digital Infrastructure &amp; Execution for Governments &amp; Institutions</title>
+<meta name="description" content="Genosis advises, designs, pilots, and scales the digital infrastructure governments, institutions, and organizations run on — identity, payments, logistics, healthcare, data, and more.">
+<link rel="canonical" href="https://genosis.io/index.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="topbar">
+  Active engagements across the Americas, Africa, Europe, and Asia. <a href="markets.html">View markets →</a>
+</div>
+<nav class="top">
+  <div class="nav-inner">
+    <a class="logo-mark" href="index.html" aria-label="Genosis — Home">GENOSIS</a>
+
+    <ul class="nav-menu" id="navMenu">
+      <li>
+        <a class="nav-link" data-page="approach" href="approach.html">Approach</a>
+      </li>
+
+      <li data-menu="programs">
+        <a class="nav-link" onclick="toggleDropdown(event, 'programs')" aria-haspopup="true" aria-expanded="false">
+          Programs
+          <span class="nav-chev"></span>
+        </a>
+        <div class="dropdown wide align-center">
+          <div class="dropdown-panel">
+            <div class="dropdown-header">Infrastructure programs</div>
+            <div class="dropdown-grid">
+              <a class="dropdown-item" href="program-identity.html">
+                <span class="di-name">Digital ID</span>
+                <span class="di-desc">Verified onboarding infrastructure</span>
+              </a>
+              <a class="dropdown-item" href="program-payments.html">
+                <span class="di-name">Banking &amp; Payments</span>
+                <span class="di-desc">Transactional infrastructure systems</span>
+              </a>
+              <a class="dropdown-item" href="program-logistics.html">
+                <span class="di-name">Logistics</span>
+                <span class="di-desc">Movement, coordination, distribution</span>
+              </a>
+              <a class="dropdown-item" href="program-healthcare.html">
+                <span class="di-name">Healthcare</span>
+                <span class="di-desc">Health record &amp; delivery systems</span>
+              </a>
+              <a class="dropdown-item" href="program-data.html">
+                <span class="di-name">Data &amp; Digitization</span>
+                <span class="di-desc">Records, insight, structured data</span>
+              </a>
+              <a class="dropdown-item" href="program-datacenter.html">
+                <span class="di-name">Data Centers</span>
+                <span class="di-desc">Sovereign data center build-out</span>
+              </a>
+              <a class="dropdown-item" href="program-pm.html">
+                <span class="di-name">Enterprise Management Systems</span>
+                <span class="di-desc">Institutional execution layer</span>
+              </a>
+              <a class="dropdown-item" href="program-education.html">
+                <span class="di-name">Education &amp; Training</span>
+                <span class="di-desc">Institutional learning systems</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li data-menu="industries">
+        <a class="nav-link" onclick="toggleDropdown(event, 'industries')" aria-haspopup="true" aria-expanded="false">
+          Industries
+          <span class="nav-chev"></span>
+        </a>
+        <div class="dropdown wide extra-wide align-center">
+          <div class="dropdown-panel">
+            <div class="dropdown-header">Industry solutions</div>
+            <div class="dropdown-grid cols-3">
+              <a class="dropdown-item" href="industry-public.html">
+                <span class="di-name">Public Service</span>
+              </a>
+              <a class="dropdown-item" href="industry-government.html">
+                <span class="di-name">Global Government</span>
+              </a>
+              <a class="dropdown-item" href="industry-healthcare.html">
+                <span class="di-name">Healthcare</span>
+              </a>
+              <a class="dropdown-item" href="industry-banking.html">
+                <span class="di-name">Banking</span>
+              </a>
+              <a class="dropdown-item" href="industry-financial.html">
+                <span class="di-name">Financial Services</span>
+              </a>
+              <a class="dropdown-item" href="industry-insurance.html">
+                <span class="di-name">Insurance</span>
+              </a>
+              <a class="dropdown-item" href="industry-capital-markets.html">
+                <span class="di-name">Capital Markets</span>
+              </a>
+              <a class="dropdown-item" href="industry-retail.html">
+                <span class="di-name">Retail</span>
+              </a>
+              <a class="dropdown-item" href="industry-consumer-goods.html">
+                <span class="di-name">Consumer Goods</span>
+              </a>
+              <a class="dropdown-item" href="industry-industrial.html">
+                <span class="di-name">Industrial</span>
+              </a>
+              <a class="dropdown-item" href="industry-hightech.html">
+                <span class="di-name">High Tech</span>
+              </a>
+              <a class="dropdown-item" href="industry-automotive.html">
+                <span class="di-name">Automotive</span>
+              </a>
+              <a class="dropdown-item" href="industry-energy.html">
+                <span class="di-name">Energy</span>
+              </a>
+              <a class="dropdown-item" href="industry-utilities.html">
+                <span class="di-name">Utilities</span>
+              </a>
+              <a class="dropdown-item" href="industry-natural.html">
+                <span class="di-name">Natural Resources</span>
+              </a>
+              <a class="dropdown-item" href="industry-communications.html">
+                <span class="di-name">Communications &amp; Media</span>
+              </a>
+              <a class="dropdown-item" href="industry-travel.html">
+                <span class="di-name">Travel</span>
+              </a>
+              <a class="dropdown-item" href="industry-talent.html">
+                <span class="di-name">Talent &amp; Organization</span>
+              </a>
+              <a class="dropdown-item" href="industry-marketing.html">
+                <span class="di-name">Marketing &amp; Experience</span>
+              </a>
+              <a class="dropdown-item view-all" href="industries.html">
+                <span class="di-name">View all industries →</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li data-menu="solutions">
+        <a class="nav-link" onclick="toggleDropdown(event, 'solutions')" aria-haspopup="true" aria-expanded="false">
+          Solutions
+          <span class="nav-chev"></span>
+        </a>
+        <div class="dropdown wide extra-wide align-center">
+          <div class="dropdown-panel">
+            <div class="dropdown-header">Solutions &amp; Services</div>
+            <div class="dropdown-grid cols-3">
+              <a class="dropdown-item" href="solution-strategy.html">
+                <span class="di-name">Strategy &amp; Advisory</span>
+              </a>
+              <a class="dropdown-item" href="solution-technology.html">
+                <span class="di-name">Technology Implementation</span>
+              </a>
+              <a class="dropdown-item" href="solution-application.html">
+                <span class="di-name">Application Development</span>
+              </a>
+              <a class="dropdown-item" href="solution-cloud.html">
+                <span class="di-name">Cloud Infrastructure</span>
+              </a>
+              <a class="dropdown-item" href="solution-data.html">
+                <span class="di-name">Data &amp; Analytics</span>
+              </a>
+              <a class="dropdown-item" href="solution-ai.html">
+                <span class="di-name">Artificial Intelligence</span>
+              </a>
+              <a class="dropdown-item" href="solution-security.html">
+                <span class="di-name">Cybersecurity</span>
+              </a>
+              <a class="dropdown-item" href="solution-transformation.html">
+                <span class="di-name">Digital Transformation</span>
+              </a>
+              <a class="dropdown-item" href="solution-operations.html">
+                <span class="di-name">Operations &amp; Process</span>
+              </a>
+              <a class="dropdown-item" href="solution-experience.html">
+                <span class="di-name">Customer Experience</span>
+              </a>
+              <a class="dropdown-item" href="solution-talent.html">
+                <span class="di-name">Talent &amp; Organization</span>
+              </a>
+              <a class="dropdown-item" href="solution-sustainability.html">
+                <span class="di-name">Sustainability</span>
+              </a>
+              <a class="dropdown-item view-all" href="solutions.html">
+                <span class="di-name">View all solutions →</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li><a class="nav-link" data-page="services" href="services.html">Services</a></li>
+      <li><a class="nav-link" data-page="markets" href="markets.html">Markets</a></li>
+      <li><a class="nav-link" data-page="about" href="about.html">About</a></li>
+
+      <li class="nav-cta">
+        <a class="nav-link" href="contact.html">Request a briefing</a>
+      </li>
+    </ul>
+
+    <button class="mobile-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu" aria-expanded="false">
+      <span class="bars"><span></span><span></span><span></span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-backdrop" onclick="closeMobileNav()"></div>
+<aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+  <div class="drawer-header">
+    <span class="logo-mark">GENOSIS</span>
+    <button class="drawer-close" onclick="closeMobileNav()" aria-label="Close menu">×</button>
+  </div>
+
+  <ul class="drawer-menu">
+    <li><a href="approach.html">Approach</a></li>
+
+    <li data-drawer-menu="programs">
+      <button onclick="toggleDrawerSubmenu('programs')" aria-expanded="false">
+        Programs
+        <span class="drawer-chev"></span>
+      </button>
+      <div class="drawer-submenu">
+        <a href="program-identity.html">
+          <span class="ds-name">Digital ID</span>
+          <span class="ds-desc">Verified onboarding infrastructure</span>
+        </a>
+        <a href="program-payments.html">
+          <span class="ds-name">Banking &amp; Payments</span>
+          <span class="ds-desc">Transactional infrastructure systems</span>
+        </a>
+        <a href="program-logistics.html">
+          <span class="ds-name">Logistics</span>
+          <span class="ds-desc">Movement, coordination, distribution</span>
+        </a>
+        <a href="program-healthcare.html">
+          <span class="ds-name">Healthcare</span>
+          <span class="ds-desc">Health record &amp; delivery systems</span>
+        </a>
+        <a href="program-data.html">
+          <span class="ds-name">Data &amp; Digitization</span>
+          <span class="ds-desc">Records, insight, structured data</span>
+        </a>
+        <a href="program-datacenter.html">
+          <span class="ds-name">Data Centers</span>
+          <span class="ds-desc">Sovereign data center build-out</span>
+        </a>
+        <a href="program-pm.html">
+          <span class="ds-name">Enterprise Management Systems</span>
+          <span class="ds-desc">Institutional execution layer</span>
+        </a>
+        <a href="program-education.html">
+          <span class="ds-name">Education &amp; Training</span>
+          <span class="ds-desc">Institutional learning systems</span>
+        </a>
+      </div>
+    </li>
+
+    <li data-drawer-menu="industries">
+      <button onclick="toggleDrawerSubmenu('industries')" aria-expanded="false">
+        Industries
+        <span class="drawer-chev"></span>
+      </button>
+      <div class="drawer-submenu">
+        <a href="industry-public.html"><span class="ds-name">Public Service</span></a>
+        <a href="industry-government.html"><span class="ds-name">Global Government</span></a>
+        <a href="industry-healthcare.html"><span class="ds-name">Healthcare</span></a>
+        <a href="industry-banking.html"><span class="ds-name">Banking</span></a>
+        <a href="industry-financial.html"><span class="ds-name">Financial Services</span></a>
+        <a href="industry-insurance.html"><span class="ds-name">Insurance</span></a>
+        <a href="industry-capital-markets.html"><span class="ds-name">Capital Markets</span></a>
+        <a href="industry-retail.html"><span class="ds-name">Retail</span></a>
+        <a href="industry-consumer-goods.html"><span class="ds-name">Consumer Goods</span></a>
+        <a href="industry-industrial.html"><span class="ds-name">Industrial</span></a>
+        <a href="industry-hightech.html"><span class="ds-name">High Tech</span></a>
+        <a href="industry-automotive.html"><span class="ds-name">Automotive</span></a>
+        <a href="industry-energy.html"><span class="ds-name">Energy</span></a>
+        <a href="industry-utilities.html"><span class="ds-name">Utilities</span></a>
+        <a href="industry-natural.html"><span class="ds-name">Natural Resources</span></a>
+        <a href="industry-communications.html"><span class="ds-name">Communications &amp; Media</span></a>
+        <a href="industry-travel.html"><span class="ds-name">Travel</span></a>
+        <a href="industry-talent.html"><span class="ds-name">Talent &amp; Organization</span></a>
+        <a href="industry-marketing.html"><span class="ds-name">Marketing &amp; Experience</span></a>
+        <a href="industries.html"><span class="ds-name" style="color:var(--gold-dim);">View all industries →</span></a>
+      </div>
+    </li>
+
+    <li data-drawer-menu="solutions">
+      <button onclick="toggleDrawerSubmenu('solutions')" aria-expanded="false">
+        Solutions
+        <span class="drawer-chev"></span>
+      </button>
+      <div class="drawer-submenu">
+        <a href="solution-strategy.html"><span class="ds-name">Strategy &amp; Advisory</span></a>
+        <a href="solution-technology.html"><span class="ds-name">Technology Implementation</span></a>
+        <a href="solution-application.html"><span class="ds-name">Application Development</span></a>
+        <a href="solution-cloud.html"><span class="ds-name">Cloud Infrastructure</span></a>
+        <a href="solution-data.html"><span class="ds-name">Data &amp; Analytics</span></a>
+        <a href="solution-ai.html"><span class="ds-name">Artificial Intelligence</span></a>
+        <a href="solution-security.html"><span class="ds-name">Cybersecurity</span></a>
+        <a href="solution-transformation.html"><span class="ds-name">Digital Transformation</span></a>
+        <a href="solution-operations.html"><span class="ds-name">Operations &amp; Process</span></a>
+        <a href="solution-experience.html"><span class="ds-name">Customer Experience</span></a>
+        <a href="solution-talent.html"><span class="ds-name">Talent &amp; Organization</span></a>
+        <a href="solution-sustainability.html"><span class="ds-name">Sustainability</span></a>
+        <a href="solutions.html"><span class="ds-name" style="color:var(--gold-dim);">View all solutions →</span></a>
+      </div>
+    </li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="markets.html">Markets</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+
+  <div class="drawer-cta">
+    <a href="contact.html">Request a briefing</a>
+  </div>
+</aside>
+<main>
+
+<!-- HERO -->
+<section class="hero">
+<div aria-hidden="true" class="hero-grain"></div>
+<div class="container">
+<p class="hero-eyebrow">Institutional advisory · Engineering capability</p>
+<div aria-label="Genosis — Solutions of Value" class="brand-logo-svg brand-logo-svg--hero" role="img"></div>
+<div class="hero-pillars">
+<span>Digital ID</span><span class="sep"></span>
+<span>Banking &amp; Payments</span><span class="sep"></span>
+<span>Logistics</span><span class="sep"></span>
+<span>Healthcare</span><span class="sep"></span>
+<span>Data &amp; Digitization</span><span class="sep"></span>
+<span>Data Centers</span><span class="sep"></span>
+<span>Enterprise Management Systems</span><span class="sep"></span>
+<span>Education &amp; Training</span>
+</div>
+<h1 class="hero-headline">Where institutional strategy <span class="serif-italic-gold">becomes operating system.</span></h1>
+<p class="hero-sub">A full advisory practice and engineering capability under one accountable structure. Genosis advises, designs, pilots, and scales the systems that governments, institutions, and organizations run on — across digital identity, banking and payments, intelligent logistics, healthcare, data and record digitization, sovereign data center build-out, enterprise management systems, and institutional education and training.</p>
+<div class="hero-ctas">
+<a class="btn-primary btn-gold" href="index.html#programs-section">Explore programs</a>
+<a class="btn-ghost" href="contact.html">Request a briefing</a>
+</div>
+</div>
+</section>
+<!-- FRAME -->
+<!-- WHAT GENOSIS IS -->
+<section class="genosis-thesis scroll-fade">
+<div class="container">
+<div class="thesis-eyebrow">
+<span class="thesis-eyebrow-line"></span>
+<span class="thesis-eyebrow-text">What Genosis is</span>
+<span class="thesis-eyebrow-line"></span>
+</div>
+<h2 class="thesis-statement">
+        Genosis is an <em>institutional advisory practice</em> and an <em>engineering capability</em> — under one accountable structure.
+      </h2>
+<div class="thesis-equation">
+<div class="thesis-half">
+<span class="thesis-half-num">01</span>
+<h3 class="thesis-half-name">Advisory practice</h3>
+<p class="thesis-half-desc">We work with executive leadership to translate strategic intent into structured, executable programs.</p>
+</div>
+<div aria-hidden="true" class="thesis-join">
+<span class="thesis-join-mark">+</span>
+<span class="thesis-join-label">One structure</span>
+</div>
+<div class="thesis-half">
+<span class="thesis-half-num">02</span>
+<h3 class="thesis-half-name">Engineering capability</h3>
+<p class="thesis-half-desc">We hold the engineering depth to design, build, and deploy the systems we recommend.</p>
+</div>
+</div>
+<div class="thesis-distinction">
+<p class="thesis-distinction-text">
+<span class="thesis-d-row"><strong>Consultancies advise.</strong> They write strategy. They don't ship.</span>
+<span class="thesis-d-row"><strong>Vendors build.</strong> They write code. They don't think strategically.</span>
+<span class="thesis-d-row thesis-d-row--us"><strong>Genosis does both</strong> — under one accountable structure, from strategy through to operating system.</span>
+</p>
+</div>
+</div>
+</section>
+<!-- PROGRAMS -->
+<section class="programs scroll-fade" id="programs-section">
+<div class="container">
+<div class="programs-header">
+<div><span class="eyebrow">Programs</span></div>
+<div>
+<h2 class="h-section">Infrastructure programs.<br/><span class="serif-italic">One execution model.</span></h2>
+</div>
+</div>
+<div class="programs-grid">
+<a class="program-card" href="program-identity.html">
+<span class="program-card-num">i.</span>
+<h3 class="program-card-name">Digital ID</h3>
+<p class="program-card-desc">Verified onboarding infrastructure that allows institutions to identify, serve, and scale participation.</p>
+<span class="program-card-link">Explore Digital ID</span>
+</a>
+<a class="program-card" href="program-payments.html">
+<span class="program-card-num">ii.</span>
+<h3 class="program-card-name">Banking &amp; Payments</h3>
+<p class="program-card-desc">Banking, payments, and transactional infrastructure that enables digital money movement and financial participation at institutional scale.</p>
+<span class="program-card-link">Explore Banking &amp; Payments</span>
+</a>
+<a class="program-card" href="program-logistics.html">
+<span class="program-card-num">iii.</span>
+<h3 class="program-card-name">Logistics</h3>
+<p class="program-card-desc">Logistics infrastructure that coordinates the movement of goods, materials, and resources across institutional networks at scale.</p>
+<span class="program-card-link">Explore Logistics</span>
+</a>
+<a class="program-card" href="program-healthcare.html">
+<span class="program-card-num">iv.</span>
+<h3 class="program-card-name">Healthcare</h3>
+<p class="program-card-desc">Connected health systems that link providers, records, and patient access into a single operational layer.</p>
+<span class="program-card-link">Explore Healthcare</span>
+</a>
+<a class="program-card" href="program-data.html">
+<span class="program-card-num">v.</span>
+<h3 class="program-card-name">Data &amp; Digitization</h3>
+<p class="program-card-desc">Structured data infrastructure and record digitization that convert institutional scale into measurable insight.</p>
+<span class="program-card-link">Explore Data &amp; Digitization</span>
+</a>
+<a class="program-card" href="program-datacenter.html">
+<span class="program-card-num">vi.</span>
+<h3 class="program-card-name">Data Centers</h3>
+<p class="program-card-desc">Sovereign data center infrastructure — designed, advised on, and executed for institutional control of physical data infrastructure.</p>
+<span class="program-card-link">Explore Data Centers</span>
+</a>
+<a class="program-card" href="program-pm.html">
+<span class="program-card-num">vii.</span>
+<h3 class="program-card-name">Enterprise Management Systems</h3>
+<p class="program-card-desc">Institutional execution infrastructure for organizations coordinating multi-stakeholder programs across the enterprise.</p>
+<span class="program-card-link">Explore Enterprise Management Systems</span>
+</a>
+<a class="program-card" href="program-education.html">
+<span class="program-card-num">viii.</span>
+<h3 class="program-card-name">Education &amp; Training</h3>
+<p class="program-card-desc">Institutional learning and training systems that track capability, credentials, and workforce development.</p>
+<span class="program-card-link">Explore Education &amp; Training</span>
+</a>
+<a class="program-card more-card" href="contact.html">
+<span class="program-card-num">+</span>
+<h3 class="program-card-name">Custom infrastructure programs</h3>
+<p class="program-card-desc">Genosis designs new programs around institutional needs that don't fit existing categories. If your organization has an infrastructure gap that needs structured pilot-to-scale execution, we can build the program.</p>
+<span class="program-card-link">Discuss a custom program</span>
+</a>
+</div>
+</div>
+</section>
+<!-- ADVISORY PRACTICE BAND -->
+<section class="advisory-band scroll-fade">
+<div class="container">
+<div class="advisory-header">
+<span class="eyebrow">Advisory practice</span>
+<h2 class="advisory-headline">Beyond program execution, Genosis runs a full <span class="serif-italic-gold">institutional consulting and advisory practice.</span></h2>
+<p class="advisory-audience">We work with executive leadership, ministers, agency heads, and board-level sponsors.</p>
+</div>
+<div class="advisory-capabilities">
+<div class="advisory-cap">
+<div class="advisory-cap-num">01</div>
+<h3 class="advisory-cap-title">Operating-model design</h3>
+</div>
+<div class="advisory-cap">
+<div class="advisory-cap-num">02</div>
+<h3 class="advisory-cap-title">Organizational structure</h3>
+</div>
+<div class="advisory-cap">
+<div class="advisory-cap-num">03</div>
+<h3 class="advisory-cap-title">Technology &amp; digital strategy</h3>
+</div>
+<div class="advisory-cap">
+<div class="advisory-cap-num">04</div>
+<h3 class="advisory-cap-title">Governance</h3>
+</div>
+<div class="advisory-cap">
+<div class="advisory-cap-num">05</div>
+<h3 class="advisory-cap-title">Policy frame</h3>
+</div>
+<div class="advisory-cap">
+<div class="advisory-cap-num">06</div>
+<h3 class="advisory-cap-title">Institutional assessment</h3>
+</div>
+</div>
+<div class="advisory-footer">
+<p class="advisory-distinction">Advisory engagements can stand independently — <strong>strategy, assessment, and governance work without an engineering build</strong> — or integrate with our delivery capability when institutions need both.</p>
+<a class="btn-ghost btn-ghost-dark" href="solution-strategy.html">Explore the advisory practice</a>
+</div>
+</div>
+</section>
+<!-- APPROACH STAGES -->
+<section class="approach scroll-fade">
+<div class="container">
+<div class="approach-header">
+<span class="eyebrow">The Genosis execution model</span>
+<h2 class="h-section" style="margin-top:24px;">Every program follows the same four-stage pathway.</h2>
+<p class="lead" style="margin-top:24px;">Survey, design, pilot, scale. This is what separates structured infrastructure from one-off deployments.</p>
+</div>
+<div class="approach-stages">
+<div class="stage">
+<div class="stage-num">01.</div>
+<h3 class="stage-name">Survey</h3>
+<p class="stage-desc">We embed within the environment. We study existing systems, regulation, participant behavior, and institutional constraints.</p>
+</div>
+<div class="stage">
+<div class="stage-num">02.</div>
+<h3 class="stage-name">Design</h3>
+<p class="stage-desc">We structure the program — the data layer, the operating model, the integration points, the pathway to scale.</p>
+</div>
+<div class="stage">
+<div class="stage-num">03.</div>
+<h3 class="stage-name">Pilot</h3>
+<p class="stage-desc">We deploy a controlled pilot to validate functionality and adoption before expansion.</p>
+</div>
+<div class="stage">
+<div class="stage-num">04.</div>
+<h3 class="stage-name">Scale</h3>
+<p class="stage-desc">We expand the system into broader infrastructure that supports larger populations and additional services.</p>
+</div>
+</div>
+<div style="margin-top:48px;">
+<a class="btn-ghost" href="approach.html">Read the full approach</a>
+</div>
+</div>
+</section>
+<!-- INDUSTRIES SHORT GRID -->
+<section class="industries scroll-fade">
+<div class="container">
+<div class="industries-header">
+<div><span class="eyebrow">Industries</span></div>
+<div>
+<h2 class="h-section">Sectors we structure programs around.</h2>
+<p class="lead" style="margin-top:20px;">Genosis programs adapt to the institutional landscape of each sector — from public service infrastructure to healthcare delivery to financial participation.</p>
+</div>
+</div>
+<div class="industries-grid">
+<a class="industry-card" href="industry-public.html">
+<span class="industry-num">i.</span>
+<span class="industry-name">Public Service</span>
+<span class="industry-desc">eGov, civic infrastructure, regulatory systems</span>
+</a>
+<a class="industry-card" href="industry-government.html">
+<span class="industry-num">ii.</span>
+<span class="industry-name">Global Government</span>
+<span class="industry-desc">Cross-departmental coordination, citizen services</span>
+</a>
+<a class="industry-card" href="industry-banking.html">
+<span class="industry-num">iii.</span>
+<span class="industry-name">Banking</span>
+<span class="industry-desc">Digital banking, risk, fraud, compliance</span>
+</a>
+<a class="industry-card" href="industry-healthcare.html">
+<span class="industry-num">iv.</span>
+<span class="industry-name">Healthcare</span>
+<span class="industry-desc">Provider, patient, and records systems</span>
+</a>
+<a class="industry-card" href="industry-financial.html">
+<span class="industry-num">v.</span>
+<span class="industry-name">Financial Services</span>
+<span class="industry-desc">Payments, financial participation</span>
+</a>
+<a class="industry-card" href="industry-insurance.html">
+<span class="industry-num">vi.</span>
+<span class="industry-name">Insurance</span>
+<span class="industry-desc">Underwriting, claims, policy management</span>
+</a>
+<a class="industry-card" href="industry-industrial.html">
+<span class="industry-num">vii.</span>
+<span class="industry-name">Industrial</span>
+<span class="industry-desc">Manufacturing, supply chain, operations</span>
+</a>
+<a class="industry-card" href="industry-natural.html">
+<span class="industry-num">viii.</span>
+<span class="industry-name">Natural Resources</span>
+<span class="industry-desc">Operational efficiency, compliance</span>
+</a>
+</div>
+<div style="margin-top:40px; text-align:right;">
+<a class="btn-ghost" href="industries.html">View all 19 industries</a>
+</div>
+</div>
+</section>
+<!-- MARKETS -->
+<section class="markets scroll-fade">
+<div class="container">
+<div class="markets-grid">
+<div>
+<span class="eyebrow">Markets</span>
+<h2 class="h-section" style="margin-top:24px;">Where Genosis operates.</h2>
+</div>
+<div>
+<p class="lead" style="margin-bottom:32px;">We work in markets where institutional infrastructure has the largest gaps — and the largest opportunity for structured participation.</p>
+<div class="markets-list">
+<div class="market-row">
+<div class="market-region">The Americas</div>
+<div class="market-countries">USA · Canada · Guyana · Trinidad · Suriname · Jamaica</div>
+</div>
+<div class="market-row">
+<div class="market-region">The Africas</div>
+<div class="market-countries">Democratic Republic of Congo · Uganda · Nigeria · Liberia</div>
+</div>
+<div class="market-row">
+<div class="market-region">Europe</div>
+<div class="market-countries">United Kingdom · Italy</div>
+</div>
+<div class="market-row">
+<div class="market-region">The Asias</div>
+<div class="market-countries">India · Eastern Asia</div>
+</div>
+</div>
+<div style="margin-top:40px;">
+<a class="btn-ghost" href="markets.html">Explore markets in detail</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CLOSING -->
+<section class="closing scroll-fade">
+<div class="container">
+<div aria-label="Genosis — Solutions of Value" class="brand-logo-svg brand-logo-svg--closing" role="img"></div>
+<p class="closing-quote">
+<span class="quote-setup">We don't just define the solution.</span>
+<span class="quote-payoff">We <span class="quote-accent">build</span> the pathway to execute it.</span>
+</p>
+<a class="btn-primary btn-gold" href="contact.html">Request a briefing</a>
+</div>
+</section>
+
+</main>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand-logo-svg brand-logo-svg--footer" role="img" aria-label="Genosis — Solutions of Value"></div>
+        <p class="footer-tag">Genosis Inc. — Institutional advisory and digital infrastructure for governments, institutions, and organizations.</p>
+        <div class="footer-contact">
+          contact@genosis.io<br>
+          +1 (516) 849-3469<br>
+          New York, USA
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Programs</h5>
+        <ul>
+          <li><a href="program-identity.html">Digital ID</a></li>
+          <li><a href="program-payments.html">Banking &amp; Payments</a></li>
+          <li><a href="program-logistics.html">Logistics</a></li>
+          <li><a href="program-healthcare.html">Healthcare</a></li>
+          <li><a href="program-data.html">Data &amp; Digitization</a></li>
+          <li><a href="program-datacenter.html">Data Centers</a></li>
+          <li><a href="program-pm.html">Enterprise Management Systems</a></li>
+          <li><a href="program-education.html">Education &amp; Training</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Solutions</h5>
+        <ul>
+          <li><a href="solution-strategy.html">Strategy &amp; Advisory</a></li>
+          <li><a href="solution-technology.html">Technology Implementation</a></li>
+          <li><a href="solution-data.html">Data &amp; Analytics</a></li>
+          <li><a href="solution-ai.html">Artificial Intelligence</a></li>
+          <li><a href="solution-security.html">Cybersecurity</a></li>
+          <li><a href="solutions.html">View all →</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Industries</h5>
+        <ul>
+          <li><a href="industry-public.html">Public Service</a></li>
+          <li><a href="industry-healthcare.html">Healthcare</a></li>
+          <li><a href="industry-financial.html">Financial Services</a></li>
+          <li><a href="industry-banking.html">Banking</a></li>
+          <li><a href="industries.html">View all →</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="approach.html">Approach</a></li>
+          <li><a href="markets.html">Markets</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Engagement</h5>
+        <ul>
+          <li><a href="contact.html">Request a briefing</a></li>
+          <li><a href="contact.html">Partnership inquiry</a></li>
+          <li><a href="contact.html">General inquiry</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <div>© 2026 Genosis Inc. All rights reserved.</div>
+      <div>
+        <a>Privacy</a>
+        <a>Terms</a>
+        <a>Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>
