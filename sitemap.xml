@@ -235,4 +235,24 @@
     <lastmod>2026-05-31</lastmod>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://genosis.io/privacy.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://genosis.io/terms.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://genosis.io/cookies.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://genosis.io/accessibility.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <priority>0.3</priority>
+  </url>
 </urlset>
