@@ -23,18 +23,36 @@
     <a class="logo-mark" href="index.html" aria-label="Genosis — Home">GENOSIS</a>
 
     <ul class="nav-menu" id="navMenu">
-      <li>
-        <a class="nav-link" data-page="approach" href="approach.html">Approach</a>
+      <li data-menu="initiative">
+        <a class="nav-link" onclick="toggleDropdown(event, 'initiative')" aria-haspopup="true" aria-expanded="false">
+          Genosis Initiatives
+          <span class="nav-chev"></span>
+        </a>
+        <div class="dropdown align-center">
+          <div class="dropdown-panel">
+            <div class="dropdown-header">Genosis Initiatives</div>
+            <div class="dropdown-grid" style="grid-template-columns:1fr;">
+              <a class="dropdown-item" href="initiative.html">
+                <span class="di-name">Genosis Infrastructure Initiative</span>
+                <span class="di-desc">Building the foundations of modern nations</span>
+              </a>
+            </div>
+          </div>
+        </div>
       </li>
+
+      <li><a class="nav-link" data-page="services" href="services.html">Services</a></li>
+
+      <li class="nav-group-start"><a class="nav-link" data-page="approach" href="approach.html">Approach</a></li>
 
       <li data-menu="programs">
         <a class="nav-link" onclick="toggleDropdown(event, 'programs')" aria-haspopup="true" aria-expanded="false">
-          Programs
+          Genosis Solutions
           <span class="nav-chev"></span>
         </a>
         <div class="dropdown wide align-center">
           <div class="dropdown-panel">
-            <div class="dropdown-header">Infrastructure programs</div>
+            <div class="dropdown-header">Genosis Solutions</div>
             <div class="dropdown-grid">
               <a class="dropdown-item" href="program-identity.html">
                 <span class="di-name">Digital ID</span>
@@ -73,7 +91,7 @@
         </div>
       </li>
 
-      <li data-menu="industries">
+      <li class="nav-group-start" data-menu="industries">
         <a class="nav-link is-current" onclick="toggleDropdown(event, 'industries')" aria-haspopup="true" aria-expanded="false">
           Industries
           <span class="nav-chev"></span>
@@ -82,129 +100,37 @@
           <div class="dropdown-panel">
             <div class="dropdown-header">Industry solutions</div>
             <div class="dropdown-grid cols-3">
-              <a class="dropdown-item" href="industry-public.html">
-                <span class="di-name">Public Service</span>
-              </a>
-              <a class="dropdown-item" href="industry-government.html">
-                <span class="di-name">Global Government</span>
-              </a>
-              <a class="dropdown-item" href="industry-healthcare.html">
-                <span class="di-name">Healthcare</span>
-              </a>
-              <a class="dropdown-item" href="industry-banking.html">
-                <span class="di-name">Banking</span>
-              </a>
-              <a class="dropdown-item" href="industry-financial.html">
-                <span class="di-name">Financial Services</span>
-              </a>
-              <a class="dropdown-item" href="industry-insurance.html">
-                <span class="di-name">Insurance</span>
-              </a>
-              <a class="dropdown-item" href="industry-capital-markets.html">
-                <span class="di-name">Capital Markets</span>
-              </a>
-              <a class="dropdown-item" href="industry-retail.html">
-                <span class="di-name">Retail</span>
-              </a>
-              <a class="dropdown-item" href="industry-consumer-goods.html">
-                <span class="di-name">Consumer Goods</span>
-              </a>
-              <a class="dropdown-item" href="industry-industrial.html">
-                <span class="di-name">Industrial</span>
-              </a>
-              <a class="dropdown-item" href="industry-hightech.html">
-                <span class="di-name">High Tech</span>
-              </a>
-              <a class="dropdown-item" href="industry-automotive.html">
-                <span class="di-name">Automotive</span>
-              </a>
-              <a class="dropdown-item" href="industry-energy.html">
-                <span class="di-name">Energy</span>
-              </a>
-              <a class="dropdown-item" href="industry-utilities.html">
-                <span class="di-name">Utilities</span>
-              </a>
-              <a class="dropdown-item" href="industry-natural.html">
-                <span class="di-name">Natural Resources</span>
-              </a>
-              <a class="dropdown-item" href="industry-communications.html">
-                <span class="di-name">Communications &amp; Media</span>
-              </a>
-              <a class="dropdown-item" href="industry-travel.html">
-                <span class="di-name">Travel</span>
-              </a>
-              <a class="dropdown-item" href="industry-talent.html">
-                <span class="di-name">Talent &amp; Organization</span>
-              </a>
-              <a class="dropdown-item" href="industry-marketing.html">
-                <span class="di-name">Marketing &amp; Experience</span>
-              </a>
-              <a class="dropdown-item view-all" href="industries.html">
-                <span class="di-name">View all industries →</span>
-              </a>
+              <a class="dropdown-item" href="industry-public.html"><span class="di-name">Public Service</span></a>
+              <a class="dropdown-item" href="industry-government.html"><span class="di-name">Global Government</span></a>
+              <a class="dropdown-item" href="industry-healthcare.html"><span class="di-name">Healthcare</span></a>
+              <a class="dropdown-item" href="industry-banking.html"><span class="di-name">Banking</span></a>
+              <a class="dropdown-item" href="industry-financial.html"><span class="di-name">Financial Services</span></a>
+              <a class="dropdown-item" href="industry-insurance.html"><span class="di-name">Insurance</span></a>
+              <a class="dropdown-item" href="industry-capital-markets.html"><span class="di-name">Capital Markets</span></a>
+              <a class="dropdown-item" href="industry-retail.html"><span class="di-name">Retail</span></a>
+              <a class="dropdown-item" href="industry-consumer-goods.html"><span class="di-name">Consumer Goods</span></a>
+              <a class="dropdown-item" href="industry-industrial.html"><span class="di-name">Industrial</span></a>
+              <a class="dropdown-item" href="industry-hightech.html"><span class="di-name">High Tech</span></a>
+              <a class="dropdown-item" href="industry-automotive.html"><span class="di-name">Automotive</span></a>
+              <a class="dropdown-item" href="industry-energy.html"><span class="di-name">Energy</span></a>
+              <a class="dropdown-item" href="industry-utilities.html"><span class="di-name">Utilities</span></a>
+              <a class="dropdown-item" href="industry-natural.html"><span class="di-name">Natural Resources</span></a>
+              <a class="dropdown-item" href="industry-communications.html"><span class="di-name">Communications &amp; Media</span></a>
+              <a class="dropdown-item" href="industry-travel.html"><span class="di-name">Travel</span></a>
+              <a class="dropdown-item" href="industry-talent.html"><span class="di-name">Talent &amp; Organization</span></a>
+              <a class="dropdown-item" href="industry-marketing.html"><span class="di-name">Marketing &amp; Experience</span></a>
+              <a class="dropdown-item view-all" href="industries.html"><span class="di-name">View all industries →</span></a>
             </div>
           </div>
         </div>
       </li>
 
-      <li data-menu="solutions">
-        <a class="nav-link" onclick="toggleDropdown(event, 'solutions')" aria-haspopup="true" aria-expanded="false">
-          Solutions
-          <span class="nav-chev"></span>
-        </a>
-        <div class="dropdown wide extra-wide align-center">
-          <div class="dropdown-panel">
-            <div class="dropdown-header">Solutions &amp; Services</div>
-            <div class="dropdown-grid cols-3">
-              <a class="dropdown-item" href="solution-strategy.html">
-                <span class="di-name">Strategy &amp; Advisory</span>
-              </a>
-              <a class="dropdown-item" href="solution-technology.html">
-                <span class="di-name">Technology Implementation</span>
-              </a>
-              <a class="dropdown-item" href="solution-application.html">
-                <span class="di-name">Application Development</span>
-              </a>
-              <a class="dropdown-item" href="solution-cloud.html">
-                <span class="di-name">Cloud Infrastructure</span>
-              </a>
-              <a class="dropdown-item" href="solution-data.html">
-                <span class="di-name">Data &amp; Analytics</span>
-              </a>
-              <a class="dropdown-item" href="solution-ai.html">
-                <span class="di-name">Artificial Intelligence</span>
-              </a>
-              <a class="dropdown-item" href="solution-security.html">
-                <span class="di-name">Cybersecurity</span>
-              </a>
-              <a class="dropdown-item" href="solution-transformation.html">
-                <span class="di-name">Digital Transformation</span>
-              </a>
-              <a class="dropdown-item" href="solution-operations.html">
-                <span class="di-name">Operations &amp; Process</span>
-              </a>
-              <a class="dropdown-item" href="solution-experience.html">
-                <span class="di-name">Customer Experience</span>
-              </a>
-              <a class="dropdown-item" href="solution-talent.html">
-                <span class="di-name">Talent &amp; Organization</span>
-              </a>
-              <a class="dropdown-item" href="solution-sustainability.html">
-                <span class="di-name">Sustainability</span>
-              </a>
-              <a class="dropdown-item view-all" href="solutions.html">
-                <span class="di-name">View all solutions →</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li><a class="nav-link" data-page="services" href="services.html">Services</a></li>
       <li><a class="nav-link" data-page="markets" href="markets.html">Markets</a></li>
-      <li><a class="nav-link" data-page="about" href="about.html">About</a></li>
+
+      <li class="nav-group-start"><a class="nav-link" data-page="about" href="about.html">Our Team</a></li>
 
       <li class="nav-cta">
-        <a class="nav-link" href="contact.html">Request a briefing</a>
+        <a class="nav-link" href="contact.html">Partner With Us</a>
       </li>
     </ul>
 
@@ -221,46 +147,33 @@
   </div>
 
   <ul class="drawer-menu">
+    <li data-drawer-menu="initiative">
+      <button onclick="toggleDrawerSubmenu('initiative')" aria-expanded="false">
+        Genosis Initiatives
+        <span class="drawer-chev"></span>
+      </button>
+      <div class="drawer-submenu">
+        <a href="initiative.html"><span class="ds-name">Genosis Infrastructure Initiative</span></a>
+      </div>
+    </li>
+
+    <li><a href="services.html">Services</a></li>
     <li><a href="approach.html">Approach</a></li>
 
     <li data-drawer-menu="programs">
       <button onclick="toggleDrawerSubmenu('programs')" aria-expanded="false">
-        Programs
+        Genosis Solutions
         <span class="drawer-chev"></span>
       </button>
       <div class="drawer-submenu">
-        <a href="program-identity.html">
-          <span class="ds-name">Digital ID</span>
-          <span class="ds-desc">Verified onboarding infrastructure</span>
-        </a>
-        <a href="program-payments.html">
-          <span class="ds-name">Banking &amp; Payments</span>
-          <span class="ds-desc">Transactional infrastructure systems</span>
-        </a>
-        <a href="program-logistics.html">
-          <span class="ds-name">Logistics</span>
-          <span class="ds-desc">Movement, coordination, distribution</span>
-        </a>
-        <a href="program-healthcare.html">
-          <span class="ds-name">Healthcare</span>
-          <span class="ds-desc">Health record &amp; delivery systems</span>
-        </a>
-        <a href="program-data.html">
-          <span class="ds-name">Data &amp; Digitization</span>
-          <span class="ds-desc">Records, insight, structured data</span>
-        </a>
-        <a href="program-datacenter.html">
-          <span class="ds-name">Data Centers</span>
-          <span class="ds-desc">Sovereign data center build-out</span>
-        </a>
-        <a href="program-pm.html">
-          <span class="ds-name">Enterprise Management Systems</span>
-          <span class="ds-desc">Institutional execution layer</span>
-        </a>
-        <a href="program-education.html">
-          <span class="ds-name">Education &amp; Training</span>
-          <span class="ds-desc">Institutional learning systems</span>
-        </a>
+        <a href="program-identity.html"><span class="ds-name">Digital ID</span></a>
+        <a href="program-payments.html"><span class="ds-name">Banking &amp; Payments</span></a>
+        <a href="program-logistics.html"><span class="ds-name">Logistics</span></a>
+        <a href="program-healthcare.html"><span class="ds-name">Healthcare</span></a>
+        <a href="program-data.html"><span class="ds-name">Data &amp; Digitization</span></a>
+        <a href="program-datacenter.html"><span class="ds-name">Data Centers</span></a>
+        <a href="program-pm.html"><span class="ds-name">Enterprise Management Systems</span></a>
+        <a href="program-education.html"><span class="ds-name">Education &amp; Training</span></a>
       </div>
     </li>
 
@@ -293,34 +206,12 @@
       </div>
     </li>
 
-    <li data-drawer-menu="solutions">
-      <button onclick="toggleDrawerSubmenu('solutions')" aria-expanded="false">
-        Solutions
-        <span class="drawer-chev"></span>
-      </button>
-      <div class="drawer-submenu">
-        <a href="solution-strategy.html"><span class="ds-name">Strategy &amp; Advisory</span></a>
-        <a href="solution-technology.html"><span class="ds-name">Technology Implementation</span></a>
-        <a href="solution-application.html"><span class="ds-name">Application Development</span></a>
-        <a href="solution-cloud.html"><span class="ds-name">Cloud Infrastructure</span></a>
-        <a href="solution-data.html"><span class="ds-name">Data &amp; Analytics</span></a>
-        <a href="solution-ai.html"><span class="ds-name">Artificial Intelligence</span></a>
-        <a href="solution-security.html"><span class="ds-name">Cybersecurity</span></a>
-        <a href="solution-transformation.html"><span class="ds-name">Digital Transformation</span></a>
-        <a href="solution-operations.html"><span class="ds-name">Operations &amp; Process</span></a>
-        <a href="solution-experience.html"><span class="ds-name">Customer Experience</span></a>
-        <a href="solution-talent.html"><span class="ds-name">Talent &amp; Organization</span></a>
-        <a href="solution-sustainability.html"><span class="ds-name">Sustainability</span></a>
-        <a href="solutions.html"><span class="ds-name" style="color:var(--gold-dim);">View all solutions →</span></a>
-      </div>
-    </li>
-    <li><a href="services.html">Services</a></li>
     <li><a href="markets.html">Markets</a></li>
-    <li><a href="about.html">About</a></li>
+    <li><a href="about.html">Our Team</a></li>
   </ul>
 
   <div class="drawer-cta">
-    <a href="contact.html">Request a briefing</a>
+    <a href="contact.html">Partner With Us</a>
   </div>
 </aside>
 <main>
@@ -329,7 +220,7 @@
 <div class="container">
 <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><a href="industries.html">Industries</a><span class="sep">/</span><span class="current">Marketing &amp; Experience</span></div>
 <span class="eyebrow">Industries / Marketing &amp; Experience</span>
-<h1 class="page-headline" style="margin-top:24px;">Customer engagement infrastructure for institutions.</h1>
+<h1 class="page-headline" style="margin-top:24px;">Customer engagement infrastructure for <span class="ph-accent">institutions.</span></h1>
 <p class="page-sub">Genosis structures marketing and customer experience infrastructure that turns fragmented engagement into a coordinated operational layer — designed for institutions reaching populations at scale.</p>
 </div>
 </section>
@@ -434,7 +325,21 @@
         </div>
       </div>
       <div class="footer-col">
-        <h5>Programs</h5>
+        <h5>Genosis Initiatives</h5>
+        <ul>
+          <li><a href="initiative.html">Genosis Infrastructure Initiative</a></li>
+        </ul>
+        <h5 class="footer-h5-stack">Services</h5>
+        <ul>
+          <li><a href="services.html">Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Approach</h5>
+        <ul>
+          <li><a href="approach.html">Approach</a></li>
+        </ul>
+        <h5 class="footer-h5-stack">Genosis Solutions</h5>
         <ul>
           <li><a href="program-identity.html">Digital ID</a></li>
           <li><a href="program-payments.html">Banking &amp; Payments</a></li>
@@ -447,17 +352,6 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h5>Solutions</h5>
-        <ul>
-          <li><a href="solution-strategy.html">Strategy &amp; Advisory</a></li>
-          <li><a href="solution-technology.html">Technology Implementation</a></li>
-          <li><a href="solution-data.html">Data &amp; Analytics</a></li>
-          <li><a href="solution-ai.html">Artificial Intelligence</a></li>
-          <li><a href="solution-security.html">Cybersecurity</a></li>
-          <li><a href="solutions.html">View all →</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
         <h5>Industries</h5>
         <ul>
           <li><a href="industry-public.html">Public Service</a></li>
@@ -466,22 +360,21 @@
           <li><a href="industry-banking.html">Banking</a></li>
           <li><a href="industries.html">View all →</a></li>
         </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Company</h5>
+        <h5 class="footer-h5-stack">Markets</h5>
         <ul>
-          <li><a href="approach.html">Approach</a></li>
           <li><a href="markets.html">Markets</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h5>Engagement</h5>
+        <h5>Our Team</h5>
         <ul>
-          <li><a href="contact.html">Request a briefing</a></li>
+          <li><a href="about.html">Our Team</a></li>
+        </ul>
+        <h5 class="footer-h5-stack">Partner With Us</h5>
+        <ul>
           <li><a href="contact.html">Partnership inquiry</a></li>
           <li><a href="contact.html">General inquiry</a></li>
+          <li><a href="contact.html">Contact us</a></li>
         </ul>
       </div>
     </div>
@@ -497,5 +390,9 @@
   </div>
 </footer>
 <script src="main.js"></script>
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

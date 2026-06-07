@@ -121,6 +121,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://genosis.io/initiative.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://genosis.io/markets.html</loc>
     <lastmod>2026-05-31</lastmod>
     <priority>0.8</priority>
@@ -167,71 +172,6 @@
   </url>
   <url>
     <loc>https://genosis.io/services.html</loc>
-    <lastmod>2026-05-31</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://genosis.io/solution-ai.html</loc>
-    <lastmod>2026-05-31</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://genosis.io/solution-application.html</loc>
-    <lastmod>2026-05-31</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://genosis.io/solution-cloud.html</loc>
-    <lastmod>2026-05-31</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://genosis.io/solution-data.html</loc>
-    <lastmod>2026-05-31</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://genosis.io/solution-experience.html</loc>
-    <lastmod>2026-05-31</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://genosis.io/solution-operations.html</loc>
-    <lastmod>2026-05-31</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://genosis.io/solution-security.html</loc>
-    <lastmod>2026-05-31</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://genosis.io/solution-strategy.html</loc>
-    <lastmod>2026-05-31</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://genosis.io/solution-sustainability.html</loc>
-    <lastmod>2026-05-31</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://genosis.io/solution-talent.html</loc>
-    <lastmod>2026-05-31</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://genosis.io/solution-technology.html</loc>
-    <lastmod>2026-05-31</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://genosis.io/solution-transformation.html</loc>
-    <lastmod>2026-05-31</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://genosis.io/solutions.html</loc>
     <lastmod>2026-05-31</lastmod>
     <priority>0.8</priority>
   </url>

@@ -1,0 +1,993 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="color-scheme" content="light only" />
+<meta name="theme-color" content="#0A1320" />
+<meta name="description" content="The Genosis Infrastructure Initiative is a national modernization framework that helps governments, institutions, and development partners build the digital infrastructure, systems, and capabilities required to operate in the digital era." />
+<link rel="canonical" href="https://genosis.io/initiative.html" />
+<title>Genosis Infrastructure Initiative — Building the Foundations of Modern Nations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Spline+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+/* ============================================================
+   BRAND TOKENS
+   ============================================================ */
+:root {
+  /* neutrals */
+  --ink:       #0a0a0c;
+  --ink2:      #111114;
+  --panel:     #15151a;
+  --line:      #26262e;
+  --fog:       #6b6b78;
+  --mist:      #9a9aa8;
+  --bone:      #e8e6df;
+  /* primary accent — deep-blue lift (structural) */
+  --deep:      #1a3d8f;
+  --deep-soft: #4a78c8;
+  /* title accent — brighter sapphire */
+  --sapphire:  #2D6FE0;
+  /* metallic gold — sparing premium accent */
+  --metal:     #c9a24a;
+  --metal-soft: #e3c878;
+  /* semantic / categorical */
+  --ember:     #d4633a;
+  --jade:      #5b9279;
+  --sky:       #5b7fa8;
+  /* aliases mapped onto the deck's existing tokens */
+  --gold:      #2D6FE0;   /* -> sapphire (titles / labels) */
+  --gold-soft: #4a78c8;   /* -> deep-soft (soft italic highlights) */
+
+  --font-display: 'Bodoni Moda', 'Didot', Georgia, serif;
+  --font-body:    'Spline Sans', 'Helvetica Neue', sans-serif;
+  --font-mono:    'JetBrains Mono', 'SF Mono', monospace;
+}
+
+/* ============================================================ BASE ============================================================ */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--ink); color: var(--bone); font-family: var(--font-body); min-height: 100vh; }
+::selection { background: var(--deep); color: var(--bone); }
+button { font: inherit; color: inherit; }
+em { font-style: italic; }
+
+/* ATMOSPHERE */
+.atmos { position: fixed; inset: 0; pointer-events: none; z-index: 0; transform: translateZ(0); }
+.atmos .a1 { position: absolute; top: -12%; left: -8%; width: 540px; height: 540px;
+  background: radial-gradient(circle, rgba(201,162,74,0.16), transparent 68%); }
+.atmos .a2 { position: absolute; bottom: -14%; right: -6%; width: 560px; height: 560px;
+  background: radial-gradient(circle, rgba(45,111,224,0.14), transparent 68%); }
+
+/* SIDE NAV */
+.sidenav { position: fixed; top: 0; left: 0; height: 100vh; z-index: 50;
+  display: flex; flex-direction: column; justify-content: center; padding: 0 22px; }
+.sidenav button { background: none; border: none; cursor: pointer;
+  display: flex; align-items: center; gap: 11px; padding: 9px 0;
+  color: var(--fog); transition: color .3s; }
+.sidenav button:hover { color: var(--bone); }
+.sidenav .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--line);
+  transition: all .35s cubic-bezier(.2,.7,.2,1); }
+.sidenav button:hover .dot { background: var(--deep); transform: scale(1.6); }
+.sidenav .label { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 1.5px;
+  text-transform: uppercase; opacity: .5; }
+.sidenav button.active { color: var(--bone); }
+.sidenav button.active .dot { background: var(--deep); transform: scale(1.6); }
+.sidenav button.active .label { opacity: 1; font-weight: 500; }
+
+/* PROGRESS RAIL */
+.rail { position: fixed; top: 0; right: 0; height: 100vh; width: 3px; z-index: 50; background: var(--line); }
+.rail .fill { width: 100%; background: linear-gradient(var(--deep), var(--ember));
+  transition: height .6s cubic-bezier(.2,.7,.2,1); }
+
+/* MAIN */
+main { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; padding: 0 90px; }
+section { padding: 120px 0; }
+section.intro { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: 60px; }
+section.tail { padding-bottom: 160px; }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(28px);
+  transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); }
+.reveal.seen { opacity: 1; transform: translateY(0); }
+
+/* TYPE */
+.kicker { display: flex; align-items: baseline; gap: 14px; margin-bottom: 22px; }
+.kicker .num { font-family: var(--font-mono); font-size: 12px; color: var(--gold); letter-spacing: 2px; }
+.kicker .rule { flex: 1; height: 1px; background: linear-gradient(90deg, var(--metal), var(--line) 62%); }
+.kicker .tag { font-family: var(--font-mono); font-size: 11px; color: var(--fog);
+  letter-spacing: 3px; text-transform: uppercase; }
+.h2 { font-family: var(--font-display); font-weight: 400;
+  font-size: clamp(34px, 5vw, 58px); line-height: 1.05; letter-spacing: -0.015em; margin-bottom: 16px; }
+.lead { max-width: 640px; font-size: 17px; line-height: 1.75; color: var(--mist); font-weight: 300; }
+
+/* HERO */
+.kickerbar { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; flex-wrap: wrap; }
+.kickerbar .badge { font-family: var(--font-mono); font-size: 11px; color: var(--ink);
+  letter-spacing: 2px; background: var(--metal); padding: 5px 11px; border-radius: 3px; font-weight: 500; }
+.kickerbar .text { font-family: var(--font-mono); font-size: 12px; color: var(--gold); letter-spacing: 4px; }
+.h1 { font-family: var(--font-display); font-weight: 400; line-height: .98;
+  font-size: clamp(52px, 8.4vw, 118px); letter-spacing: -0.02em; }
+.h1 .tail { font-style: italic; color: var(--metal-soft); }
+.hero-tagline { max-width: 600px; margin-top: 34px; font-size: 18px; line-height: 1.7; color: var(--mist); font-weight: 300; }
+.hero-cta { display: flex; gap: 14px; margin-top: 44px; flex-wrap: wrap; }
+.hero-cta button { padding: 15px 30px; font-family: var(--font-mono); font-size: 12px;
+  letter-spacing: 1.5px; cursor: pointer; text-transform: uppercase; }
+.btn-gold { background: var(--deep); color: var(--bone); border: none; font-weight: 500; }
+.btn-ghost { background: transparent; color: var(--bone); border: 1px solid var(--line); }
+.hero-stats { margin-top: 70px; display: flex; gap: 30px; flex-wrap: wrap;
+  font-family: var(--font-mono); font-size: 11px; color: var(--fog); letter-spacing: 1px; }
+.hero-stats .sep { color: var(--line); }
+
+/* CARDS / HOVER */
+.card-lift { transition: transform .4s cubic-bezier(.2,.7,.2,1), border-color .4s, background .4s; }
+.card-lift:hover { transform: translateY(-6px); border-color: var(--deep) !important; }
+.flowstep:hover .flowbox { border-color: var(--deep) !important; background: var(--ink2) !important; }
+@keyframes pulse { 0%,100% { opacity: .4 } 50% { opacity: 1 } }
+.pulse { animation: pulse 2s infinite; }
+
+/* GRID HELPERS */
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-top: 50px; }
+.grid-pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-top: 50px; }
+.grid-cols-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin-top: 30px; }
+@media (max-width: 760px) {
+  main { padding: 0 28px; }
+  .sidenav { display: none; }
+}
+
+/* PILLAR / TRACK CARD */
+.pcard { border: 1px solid var(--line); background: var(--panel); padding: 28px 26px;
+  border-radius: 4px; height: 100%; border-top: 2px solid var(--gold); }
+.pcard .tag { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 2px; color: var(--metal); text-transform: uppercase; }
+.pcard h3 { font-family: var(--font-display); font-size: 25px; font-weight: 400; margin: 14px 0 11px; line-height: 1.1; }
+.pcard p { color: var(--mist); line-height: 1.7; font-weight: 300; font-size: 14px; }
+.pcard .ic { margin-bottom: 4px; }
+
+/* SMALL CARD (roles / value / expectations) */
+.scard { border: 1px solid var(--line); background: var(--ink2); border-radius: 4px;
+  padding: 24px 22px; height: 100%; border-left: 2px solid var(--jade); }
+.scard h4 { font-family: var(--font-display); font-size: 21px; font-weight: 400; margin: 13px 0 7px; }
+.scard p { color: var(--fog); font-size: 13px; line-height: 1.65; font-weight: 300; }
+.scard ul { margin: 10px 0 0; padding: 0; list-style: none; }
+.scard li { color: var(--mist); font-size: 13px; line-height: 1.55; font-weight: 300;
+  padding: 4px 0 4px 16px; position: relative; }
+.scard li::before { content: ''; position: absolute; left: 0; top: 11px;
+  width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+
+/* PIPELINE (flywheel) */
+.pipeline { display: flex; align-items: stretch; gap: 0; flex-wrap: wrap; margin-top: 50px; }
+.flowstep { flex: 1 1 150px; min-width: 142px; }
+.flowbox { border: 1px solid var(--line); background: var(--panel); border-radius: 4px;
+  padding: 22px 18px; height: 100%; transition: all .35s; }
+.flowbox.loop { border-color: var(--gold); background: rgba(201,162,74,.08); }
+.flowbox h4 { font-family: var(--font-display); font-size: 19px; font-weight: 400; margin-top: 12px; }
+.flowbox.loop h4 { color: var(--gold-soft); }
+.flowbox p { color: var(--fog); font-size: 12.5px; margin-top: 5px; font-weight: 300; }
+.arrow-wrap { display: flex; align-items: center; padding: 0 8px; }
+
+/* FRAMEWORK ACCORDION */
+.divs { margin-top: 46px; display: flex; flex-direction: column; gap: 10px; }
+.div-row { border: 1px solid var(--line); background: var(--ink2); border-radius: 4px;
+  padding: 20px 30px; cursor: pointer; transition: all .4s cubic-bezier(.2,.7,.2,1);
+  border-left: 3px solid var(--line); }
+.div-row.open { padding: 28px 30px; background: var(--panel); }
+.div-row .head { display: flex; align-items: center; gap: 18px; }
+.div-row .n { font-family: var(--font-mono); font-size: 12px; width: 26px; }
+.div-row h3 { font-family: var(--font-display); font-size: 25px; font-weight: 400;
+  transition: font-size .4s; flex: 1; line-height: 1.1; }
+.div-row.open h3 { font-size: 31px; }
+.div-row .tag { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 1.3px; text-transform: uppercase; white-space: nowrap; }
+.div-row .body { max-height: 0; overflow: hidden; opacity: 0; margin-left: 44px;
+  transition: max-height .45s, opacity .45s, margin .45s; }
+.div-row.open .body { max-height: 320px; opacity: 1; margin-top: 16px; }
+.div-row .body p { color: var(--mist); line-height: 1.7; font-weight: 300; font-size: 14.5px; }
+.div-row .outcome { display: inline-flex; align-items: center; gap: 9px; margin-top: 14px;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
+  border: 1px solid var(--line); padding: 8px 14px; border-radius: 4px; }
+
+/* TIMELINE — horizontal national-evolution axis */
+.evo { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); margin-top: 46px; }
+.evo::before { content: ''; position: absolute; left: 0; right: 0; top: 108px; height: 1px; background: var(--line); z-index: 0; }
+.evo-col { position: relative; padding-right: 18px; }
+.evo-col::after { content: ''; position: absolute; top: 108px; left: 0; transform: translate(-50%, -50%); width: 10px; height: 10px; border-radius: 50%; background: var(--ink); border: 1.5px solid var(--metal); box-shadow: 0 0 10px rgba(201,162,74,0.45); z-index: 2; }
+.evo-bars { height: 108px; display: flex; align-items: flex-end; }
+.evo-bar { width: 100%; max-width: 60px; border-radius: 3px 3px 0 0; background: linear-gradient(180deg, var(--sapphire), rgba(26,61,143,0.20)); box-shadow: 0 -1px 16px rgba(45,111,224,0.16); }
+.evo-yr-label { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--fog); margin-top: 26px; }
+.evo-year { font-family: var(--font-display); font-size: clamp(26px, 2.7vw, 40px); color: var(--bone); line-height: 1; letter-spacing: -0.01em; margin-top: 5px; }
+.evo-phase { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 1.4px; text-transform: uppercase; margin: 16px 0 8px; }
+.evo-desc { color: var(--mist); font-weight: 300; font-size: 13px; line-height: 1.62; }
+@media (max-width: 860px) {
+  .evo { grid-template-columns: 1fr 1fr; gap: 34px 22px; }
+  .evo::before, .evo-col::after { display: none; }
+  .evo-col { padding-right: 0; }
+  .evo-bars { height: 66px; }
+  .evo-yr-label { margin-top: 14px; }
+}
+@media (max-width: 520px) { .evo { grid-template-columns: 1fr; } }
+
+/* CALLOUT / QUOTE */
+.callout { margin-top: 30px; padding: 26px 32px; background: var(--ink2);
+  border: 1px solid var(--line); border-radius: 4px; border-left: 2px solid var(--metal);
+  display: flex; align-items: flex-start; gap: 16px; }
+.callout p { color: var(--mist); line-height: 1.65; font-weight: 300; font-size: 16px; }
+.callout strong { color: var(--bone); font-weight: 500; }
+.quote { margin-top: 28px; padding: 26px 28px; background: var(--panel);
+  border: 1px solid var(--line); border-left: 2px solid var(--sky); border-radius: 4px; }
+.quote p { font-family: var(--font-display); font-size: 21px; font-style: italic;
+  line-height: 1.5; color: var(--bone); }
+
+/* SUBHEADS */
+.subhead-jade { font-family: var(--font-mono); font-size: 12px; color: var(--jade);
+  letter-spacing: 2px; margin-top: 76px; margin-bottom: 8px; text-transform: uppercase; }
+.subhead-sky { font-family: var(--font-mono); font-size: 12px; color: var(--sky);
+  letter-spacing: 2px; margin-top: 76px; margin-bottom: 8px; text-transform: uppercase; }
+.subhead-fog { font-family: var(--font-mono); font-size: 12px; color: var(--fog);
+  letter-spacing: 2px; margin-top: 72px; margin-bottom: 8px; text-transform: uppercase; }
+
+/* ASSET STRIP */
+.assets { margin-top: 30px; border: 1px solid var(--line); background: var(--ink2);
+  border-radius: 6px; padding: 28px 30px; }
+.assets .label { font-family: var(--font-mono); font-size: 11px; color: var(--fog);
+  letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 18px; }
+.assets .chips { display: flex; gap: 12px; flex-wrap: wrap; }
+.assets .chip { font-family: var(--font-mono); font-size: 12px; color: var(--mist);
+  letter-spacing: 1px; padding: 9px 16px; border: 1px solid var(--line);
+  border-radius: 3px; background: var(--panel); }
+
+/* CLOSING */
+.closing { margin-top: 80px; padding-top: 44px; border-top: 1px solid var(--line); text-align: center; }
+.closing q { font-family: var(--font-display); font-size: clamp(28px, 4.4vw, 48px); font-weight: 400;
+  font-style: italic; line-height: 1.3; color: var(--gold-soft); max-width: 760px;
+  display: inline-block; quotes: none; }
+.closing q::before, .closing q::after { content: '"'; color: var(--metal-soft); }
+.closing .foot { margin-top: 36px; font-family: var(--font-mono); font-size: 11px;
+  color: var(--fog); letter-spacing: 2px; }
+
+/* TWO COLUMN (vision) */
+.two-col-mid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 50px; align-items: center; margin-top: 40px; }
+@media (max-width: 760px) { .two-col-mid { grid-template-columns: 1fr; gap: 30px; } }
+
+/* ===== DARK BRAND HEADER + FOOTER (this page only) ===== */
+/* override the site's prefers-color-scheme:dark light-defense so the deck stays dark */
+html { background: #0a0a0c !important; }
+body { background: var(--ink) !important; color: var(--bone) !important; }
+.topbar { background: #0A1320 !important; color: rgba(244,245,242,0.82) !important; border-bottom: 1px solid rgba(45,111,224,0.28) !important; position: relative; z-index: 60; }
+.topbar a { color: #5E97F0 !important; }
+nav.top { background: rgba(8,13,22,0.92) !important; border-bottom: 1px solid rgba(244,245,242,0.10) !important; z-index: 60; }
+nav.top .logo-mark { filter: brightness(0) invert(1); }
+nav.top ul.nav-menu > li > a.nav-link { color: rgba(244,245,242,0.90) !important; }
+nav.top ul.nav-menu > li > a.nav-link:hover,
+nav.top ul.nav-menu > li.is-open > a.nav-link { color: #7FA8EE !important; background: transparent !important; }
+nav.top ul.nav-menu > li > a.nav-link:hover::after,
+nav.top ul.nav-menu > li.is-open > a.nav-link::after { background: #7FA8EE !important; }
+nav.top ul.nav-menu > li.nav-group-start::before { background: rgba(244,245,242,0.18) !important; }
+nav.top ul.nav-menu > li > a.nav-link.is-current { color: #5E97F0 !important; }
+nav.top ul.nav-menu > li > a.nav-link.is-current::after { background: #4A8AEC !important; }
+nav.top ul.nav-menu > li.nav-cta > a { border-color: rgba(244,245,242,0.28) !important; color: rgba(244,245,242,0.92) !important; }
+nav.top ul.nav-menu > li.nav-cta > a:hover { background: #2D6FE0 !important; border-color: #2D6FE0 !important; color: #fff !important; }
+.mobile-toggle { color: #F4F5F2 !important; border-color: rgba(244,245,242,0.30) !important; }
+.mobile-toggle:hover { background: #2D6FE0 !important; border-color: #2D6FE0 !important; color: #fff !important; }
+/* keep the deck's fixed side-nav + progress rail beneath the sticky header */
+.sidenav, .rail { z-index: 50; }
+/* footer renders dark navy from site styles; brighten link hover to brand blue */
+footer .footer-col a:hover, footer .footer-base a:hover { color: #5E97F0 !important; }
+/* deck buttons: keep their intended look, immune to site .btn-gold/.btn-ghost rules */
+main .btn-gold { background: #1a3d8f !important; color: #e8e6df !important; border: none !important; }
+main .btn-gold:hover { background: #4a78c8 !important; }
+main .btn-ghost { background: transparent !important; color: #F4F5F2 !important; border: 1px solid rgba(244,245,242,0.25) !important; }
+main .btn-ghost:hover { border-color: #4A8AEC !important; color: #4A8AEC !important; background: transparent !important; }
+main .btn-gold::after, main .btn-ghost::after { content: none !important; }
+/* keep main content clear of the fixed side-nav at mid widths (it already clears on wide screens) */
+@media (min-width: 761px) and (max-width: 1280px) { main { padding-left: 156px; padding-right: 40px; } }
+</style>
+</head>
+<body>
+<div class="topbar">
+  Active engagements across the Americas, Africa, Europe, and Asia. <a href="markets.html">View markets →</a>
+</div>
+<nav class="top">
+  <div class="nav-inner">
+    <a class="logo-mark" href="index.html" aria-label="Genosis — Home">GENOSIS</a>
+
+    <ul class="nav-menu" id="navMenu">
+      <li data-menu="initiative">
+        <a class="nav-link is-current" onclick="toggleDropdown(event, 'initiative')" aria-haspopup="true" aria-expanded="false">
+          Genosis Initiatives
+          <span class="nav-chev"></span>
+        </a>
+        <div class="dropdown align-center">
+          <div class="dropdown-panel">
+            <div class="dropdown-header">Genosis Initiatives</div>
+            <div class="dropdown-grid" style="grid-template-columns:1fr;">
+              <a class="dropdown-item" href="initiative.html">
+                <span class="di-name">Genosis Infrastructure Initiative</span>
+                <span class="di-desc">Building the foundations of modern nations</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li><a class="nav-link" data-page="services" href="services.html">Services</a></li>
+
+      <li class="nav-group-start"><a class="nav-link" data-page="approach" href="approach.html">Approach</a></li>
+
+      <li data-menu="programs">
+        <a class="nav-link" onclick="toggleDropdown(event, 'programs')" aria-haspopup="true" aria-expanded="false">
+          Genosis Solutions
+          <span class="nav-chev"></span>
+        </a>
+        <div class="dropdown wide align-center">
+          <div class="dropdown-panel">
+            <div class="dropdown-header">Genosis Solutions</div>
+            <div class="dropdown-grid">
+              <a class="dropdown-item" href="program-identity.html">
+                <span class="di-name">Digital ID</span>
+                <span class="di-desc">Verified onboarding infrastructure</span>
+              </a>
+              <a class="dropdown-item" href="program-payments.html">
+                <span class="di-name">Banking &amp; Payments</span>
+                <span class="di-desc">Transactional infrastructure systems</span>
+              </a>
+              <a class="dropdown-item" href="program-logistics.html">
+                <span class="di-name">Logistics</span>
+                <span class="di-desc">Movement, coordination, distribution</span>
+              </a>
+              <a class="dropdown-item" href="program-healthcare.html">
+                <span class="di-name">Healthcare</span>
+                <span class="di-desc">Health record &amp; delivery systems</span>
+              </a>
+              <a class="dropdown-item" href="program-data.html">
+                <span class="di-name">Data &amp; Digitization</span>
+                <span class="di-desc">Records, insight, structured data</span>
+              </a>
+              <a class="dropdown-item" href="program-datacenter.html">
+                <span class="di-name">Data Centers</span>
+                <span class="di-desc">Sovereign data center build-out</span>
+              </a>
+              <a class="dropdown-item" href="program-pm.html">
+                <span class="di-name">Enterprise Management Systems</span>
+                <span class="di-desc">Institutional execution layer</span>
+              </a>
+              <a class="dropdown-item" href="program-education.html">
+                <span class="di-name">Education &amp; Training</span>
+                <span class="di-desc">Institutional learning systems</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="nav-group-start" data-menu="industries">
+        <a class="nav-link" onclick="toggleDropdown(event, 'industries')" aria-haspopup="true" aria-expanded="false">
+          Industries
+          <span class="nav-chev"></span>
+        </a>
+        <div class="dropdown wide extra-wide align-center">
+          <div class="dropdown-panel">
+            <div class="dropdown-header">Industry solutions</div>
+            <div class="dropdown-grid cols-3">
+              <a class="dropdown-item" href="industry-public.html"><span class="di-name">Public Service</span></a>
+              <a class="dropdown-item" href="industry-government.html"><span class="di-name">Global Government</span></a>
+              <a class="dropdown-item" href="industry-healthcare.html"><span class="di-name">Healthcare</span></a>
+              <a class="dropdown-item" href="industry-banking.html"><span class="di-name">Banking</span></a>
+              <a class="dropdown-item" href="industry-financial.html"><span class="di-name">Financial Services</span></a>
+              <a class="dropdown-item" href="industry-insurance.html"><span class="di-name">Insurance</span></a>
+              <a class="dropdown-item" href="industry-capital-markets.html"><span class="di-name">Capital Markets</span></a>
+              <a class="dropdown-item" href="industry-retail.html"><span class="di-name">Retail</span></a>
+              <a class="dropdown-item" href="industry-consumer-goods.html"><span class="di-name">Consumer Goods</span></a>
+              <a class="dropdown-item" href="industry-industrial.html"><span class="di-name">Industrial</span></a>
+              <a class="dropdown-item" href="industry-hightech.html"><span class="di-name">High Tech</span></a>
+              <a class="dropdown-item" href="industry-automotive.html"><span class="di-name">Automotive</span></a>
+              <a class="dropdown-item" href="industry-energy.html"><span class="di-name">Energy</span></a>
+              <a class="dropdown-item" href="industry-utilities.html"><span class="di-name">Utilities</span></a>
+              <a class="dropdown-item" href="industry-natural.html"><span class="di-name">Natural Resources</span></a>
+              <a class="dropdown-item" href="industry-communications.html"><span class="di-name">Communications &amp; Media</span></a>
+              <a class="dropdown-item" href="industry-travel.html"><span class="di-name">Travel</span></a>
+              <a class="dropdown-item" href="industry-talent.html"><span class="di-name">Talent &amp; Organization</span></a>
+              <a class="dropdown-item" href="industry-marketing.html"><span class="di-name">Marketing &amp; Experience</span></a>
+              <a class="dropdown-item view-all" href="industries.html"><span class="di-name">View all industries →</span></a>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li><a class="nav-link" data-page="markets" href="markets.html">Markets</a></li>
+
+      <li class="nav-group-start"><a class="nav-link" data-page="about" href="about.html">Our Team</a></li>
+
+      <li class="nav-cta">
+        <a class="nav-link" href="contact.html">Partner With Us</a>
+      </li>
+    </ul>
+
+    <button class="mobile-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu" aria-expanded="false">
+      <span class="bars"><span></span><span></span><span></span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-backdrop" onclick="closeMobileNav()"></div>
+<aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+  <div class="drawer-header">
+    <span class="logo-mark">GENOSIS</span>
+    <button class="drawer-close" onclick="closeMobileNav()" aria-label="Close menu">×</button>
+  </div>
+
+  <ul class="drawer-menu">
+    <li data-drawer-menu="initiative">
+      <button onclick="toggleDrawerSubmenu('initiative')" aria-expanded="false">
+        Genosis Initiatives
+        <span class="drawer-chev"></span>
+      </button>
+      <div class="drawer-submenu">
+        <a href="initiative.html"><span class="ds-name">Genosis Infrastructure Initiative</span></a>
+      </div>
+    </li>
+
+    <li><a href="services.html">Services</a></li>
+    <li><a href="approach.html">Approach</a></li>
+
+    <li data-drawer-menu="programs">
+      <button onclick="toggleDrawerSubmenu('programs')" aria-expanded="false">
+        Genosis Solutions
+        <span class="drawer-chev"></span>
+      </button>
+      <div class="drawer-submenu">
+        <a href="program-identity.html"><span class="ds-name">Digital ID</span></a>
+        <a href="program-payments.html"><span class="ds-name">Banking &amp; Payments</span></a>
+        <a href="program-logistics.html"><span class="ds-name">Logistics</span></a>
+        <a href="program-healthcare.html"><span class="ds-name">Healthcare</span></a>
+        <a href="program-data.html"><span class="ds-name">Data &amp; Digitization</span></a>
+        <a href="program-datacenter.html"><span class="ds-name">Data Centers</span></a>
+        <a href="program-pm.html"><span class="ds-name">Enterprise Management Systems</span></a>
+        <a href="program-education.html"><span class="ds-name">Education &amp; Training</span></a>
+      </div>
+    </li>
+
+    <li data-drawer-menu="industries">
+      <button onclick="toggleDrawerSubmenu('industries')" aria-expanded="false">
+        Industries
+        <span class="drawer-chev"></span>
+      </button>
+      <div class="drawer-submenu">
+        <a href="industry-public.html"><span class="ds-name">Public Service</span></a>
+        <a href="industry-government.html"><span class="ds-name">Global Government</span></a>
+        <a href="industry-healthcare.html"><span class="ds-name">Healthcare</span></a>
+        <a href="industry-banking.html"><span class="ds-name">Banking</span></a>
+        <a href="industry-financial.html"><span class="ds-name">Financial Services</span></a>
+        <a href="industry-insurance.html"><span class="ds-name">Insurance</span></a>
+        <a href="industry-capital-markets.html"><span class="ds-name">Capital Markets</span></a>
+        <a href="industry-retail.html"><span class="ds-name">Retail</span></a>
+        <a href="industry-consumer-goods.html"><span class="ds-name">Consumer Goods</span></a>
+        <a href="industry-industrial.html"><span class="ds-name">Industrial</span></a>
+        <a href="industry-hightech.html"><span class="ds-name">High Tech</span></a>
+        <a href="industry-automotive.html"><span class="ds-name">Automotive</span></a>
+        <a href="industry-energy.html"><span class="ds-name">Energy</span></a>
+        <a href="industry-utilities.html"><span class="ds-name">Utilities</span></a>
+        <a href="industry-natural.html"><span class="ds-name">Natural Resources</span></a>
+        <a href="industry-communications.html"><span class="ds-name">Communications &amp; Media</span></a>
+        <a href="industry-travel.html"><span class="ds-name">Travel</span></a>
+        <a href="industry-talent.html"><span class="ds-name">Talent &amp; Organization</span></a>
+        <a href="industry-marketing.html"><span class="ds-name">Marketing &amp; Experience</span></a>
+        <a href="industries.html"><span class="ds-name" style="color:var(--gold-dim);">View all industries →</span></a>
+      </div>
+    </li>
+
+    <li><a href="markets.html">Markets</a></li>
+    <li><a href="about.html">Our Team</a></li>
+  </ul>
+
+  <div class="drawer-cta">
+    <a href="contact.html">Partner With Us</a>
+  </div>
+</aside>
+
+<div class="atmos"><div class="a1"></div><div class="a2"></div></div>
+
+<nav class="sidenav" id="nav">
+  <button data-id="intro"><span class="dot"></span><span class="label">Open</span></button>
+  <button data-id="vision"><span class="dot"></span><span class="label">Vision</span></button>
+  <button data-id="ecosystem"><span class="dot"></span><span class="label">Ecosystem</span></button>
+  <button data-id="flywheel"><span class="dot"></span><span class="label">Flywheel</span></button>
+  <button data-id="framework"><span class="dot"></span><span class="label">Framework</span></button>
+  <button data-id="timeline"><span class="dot"></span><span class="label">Timeline</span></button>
+  <button data-id="role"><span class="dot"></span><span class="label">Our Role</span></button>
+  <button data-id="end"><span class="dot"></span><span class="label">End State</span></button>
+</nav>
+
+<div class="rail"><div class="fill" id="rail-fill" style="height:12%"></div></div>
+
+<main>
+
+<!-- ============ 00 INTRO ============ -->
+<section class="intro" id="intro">
+  <div class="reveal">
+    <div class="kickerbar">
+      <span class="badge">GENOSIS</span>
+      <span class="text">INFRASTRUCTURE INITIATIVE</span>
+    </div>
+  </div>
+  <div class="reveal" style="transition-delay:.12s">
+    <h1 class="h1">Foundations of<br><span class="tail">Modern Nations</span></h1>
+  </div>
+  <div class="reveal" style="transition-delay:.26s">
+    <p class="hero-tagline">A national modernization framework — built to help governments, institutions, and development partners create the infrastructure, systems, and capabilities a nation needs to operate in the digital era.</p>
+  </div>
+  <div class="reveal" style="transition-delay:.4s">
+    <div class="hero-cta">
+      <button class="btn-gold" onclick="goto('vision')">Walk the framework ↓</button>
+      <button class="btn-ghost" onclick="goto('timeline')">Jump to the timeline</button>
+    </div>
+  </div>
+  <div class="reveal" style="transition-delay:.56s">
+    <div class="hero-stats">
+      <span>6 &nbsp;PILLARS</span><span class="sep">·</span>
+      <span>6 &nbsp;PHASES</span><span class="sep">·</span>
+      <span>25-YEAR &nbsp;HORIZON</span><span class="sep">·</span>
+      <span>5 &nbsp;ROLES</span><span class="sep">·</span>
+      <span>1 &nbsp;FRAMEWORK</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 01 VISION ============ -->
+<section id="vision">
+  <div class="reveal"><div class="kicker"><span class="num">01</span><span class="rule"></span><span class="tag">The Vision</span></div></div>
+  <div class="two-col-mid">
+    <div>
+      <div class="reveal" style="transition-delay:.08s"><h2 class="h2">More than technology.</h2></div>
+      <div class="reveal" style="transition-delay:.16s">
+        <p class="lead">Modern nations need more than software, data centers, or artificial intelligence. They need an interconnected ecosystem where infrastructure, technology, institutions, workforce, public services, and economic participation all evolve together.</p>
+      </div>
+      <div class="reveal" style="transition-delay:.24s">
+        <p class="lead" style="margin-top:18px;font-size:15.5px">Genosis brings digital infrastructure, advanced computing, sovereign cloud, AI, cybersecurity, data systems, public-service platforms, workforce enablement, and institutional modernization into a single framework — one capable of supporting national development for decades.</p>
+      </div>
+    </div>
+    <div class="reveal" style="transition-delay:.3s">
+      <div class="callout">
+        <p><strong>The objective is simple.</strong> Create stronger institutions, improve public services, expand economic participation, and establish long-term national capability that lasts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 ECOSYSTEM ============ -->
+<section id="ecosystem">
+  <div class="reveal"><div class="kicker"><span class="num">02</span><span class="rule"></span><span class="tag">The National Capability Ecosystem</span></div></div>
+  <div class="reveal" style="transition-delay:.08s"><h2 class="h2">Six interconnected pillars.</h2></div>
+  <div class="reveal" style="transition-delay:.16s">
+    <p class="lead">No single layer modernizes a nation. Each pillar reinforces the others — and together they form the backbone of national capability.</p>
+  </div>
+  <div class="grid-pillars" id="pillars"></div>
+</section>
+
+<!-- ============ 03 FLYWHEEL ============ -->
+<section id="flywheel">
+  <div class="reveal"><div class="kicker"><span class="num">03</span><span class="rule"></span><span class="tag">The Modernization Flywheel</span></div></div>
+  <div class="reveal" style="transition-delay:.08s"><h2 class="h2">A self-reinforcing cycle.</h2></div>
+  <div class="reveal" style="transition-delay:.16s">
+    <p class="lead">Each step funds and frees the next. Infrastructure enables services; services generate data; data becomes intelligence — and the loop compounds over time.</p>
+  </div>
+  <div class="reveal" style="transition-delay:.2s">
+    <div class="pipeline" id="flywheel-flow"></div>
+  </div>
+  <div class="reveal" style="transition-delay:.3s">
+    <div class="callout">
+      <p>The objective is not technology deployment. <strong>It is building a self-reinforcing modernization ecosystem</strong> — one that grows stronger each time the cycle turns.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 FRAMEWORK ============ -->
+<section id="framework">
+  <div class="reveal"><div class="kicker"><span class="num">04</span><span class="rule"></span><span class="tag">Implementation Framework</span></div></div>
+  <div class="reveal" style="transition-delay:.08s"><h2 class="h2">Six phases, one roadmap.</h2></div>
+  <div class="reveal" style="transition-delay:.16s">
+    <p class="lead">From a clear-eyed baseline to lasting national adoption. Tap a phase to see what it covers and what it delivers.</p>
+  </div>
+  <div class="reveal" style="transition-delay:.24s"><div class="divs" id="phases"></div></div>
+</section>
+
+<!-- ============ 05 TIMELINE ============ -->
+<section id="timeline">
+  <div class="reveal"><div class="kicker"><span class="num">05</span><span class="rule"></span><span class="tag">National Evolution Timeline</span></div></div>
+  <div class="reveal" style="transition-delay:.08s"><h2 class="h2">How a nation matures.</h2></div>
+  <div class="reveal" style="transition-delay:.16s">
+    <p class="lead" style="margin-bottom:50px">Technology starts as a project, becomes part of operations, then becomes infrastructure — and finally a strategic national asset.</p>
+  </div>
+  <div id="tline"></div>
+
+  <div class="reveal" style="transition-delay:.12s"><h3 class="subhead-sky">By years 5–8 — expectations have shifted</h3></div>
+  <div class="reveal" style="transition-delay:.16s">
+    <p class="lead" style="font-size:15.5px">Once digital becomes normal, every actor expects more — and the system delivers it.</p>
+  </div>
+  <div class="grid-cols-3" id="expects"></div>
+</section>
+
+<!-- ============ 06 ROLE ============ -->
+<section id="role">
+  <div class="reveal"><div class="kicker"><span class="num">06</span><span class="rule"></span><span class="tag">What Genosis Provides</span></div></div>
+  <div class="reveal" style="transition-delay:.08s"><h2 class="h2">From architect to operator.</h2></div>
+  <div class="reveal" style="transition-delay:.16s">
+    <p class="lead">Genosis works across the whole lifecycle — designing the strategy, connecting the pieces, building the systems, operating the handoff, and partnering long after launch.</p>
+  </div>
+  <div class="grid-pillars" id="roles"></div>
+</section>
+
+<!-- ============ 07 END STATE ============ -->
+<section id="end" class="tail">
+  <div class="reveal"><div class="kicker"><span class="num">07</span><span class="rule"></span><span class="tag">The End State</span></div></div>
+  <div class="reveal" style="transition-delay:.08s"><h2 class="h2">A foundation that lasts.</h2></div>
+  <div class="reveal" style="transition-delay:.16s">
+    <p class="lead">The ultimate objective is a foundation where government services, economic participation, education, healthcare, infrastructure management, and institutional decision-making all operate faster and more effectively than before.</p>
+  </div>
+
+  <div class="reveal" style="transition-delay:.22s">
+    <div class="assets">
+      <div class="label">In time, the infrastructure becomes a strategic national asset — alongside</div>
+      <div class="chips">
+        <span class="chip">Roads</span>
+        <span class="chip">Ports</span>
+        <span class="chip">Airports</span>
+        <span class="chip">Utilities</span>
+        <span class="chip">Telecommunications</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="reveal" style="transition-delay:.28s"><h3 class="subhead-fog">Its value is measured not by hardware, but by</h3></div>
+  <div class="grid-cols-3" id="value"></div>
+
+  <div class="reveal" style="transition-delay:.4s">
+    <div class="closing">
+      <q>Technology is the tool. National capability is the outcome.</q>
+      <div class="foot">GENOSIS · SOLUTIONS OF VALUE</div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand-logo-svg brand-logo-svg--footer" role="img" aria-label="Genosis — Solutions of Value"></div>
+        <p class="footer-tag">Genosis Inc. — Institutional advisory and digital infrastructure for governments, institutions, and organizations.</p>
+        <div class="footer-contact">
+          contact@genosis.io<br>
+          +1 (516) 849-3469<br>
+          New York, USA
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Genosis Initiatives</h5>
+        <ul>
+          <li><a href="initiative.html">Genosis Infrastructure Initiative</a></li>
+        </ul>
+        <h5 class="footer-h5-stack">Services</h5>
+        <ul>
+          <li><a href="services.html">Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Approach</h5>
+        <ul>
+          <li><a href="approach.html">Approach</a></li>
+        </ul>
+        <h5 class="footer-h5-stack">Genosis Solutions</h5>
+        <ul>
+          <li><a href="program-identity.html">Digital ID</a></li>
+          <li><a href="program-payments.html">Banking &amp; Payments</a></li>
+          <li><a href="program-logistics.html">Logistics</a></li>
+          <li><a href="program-healthcare.html">Healthcare</a></li>
+          <li><a href="program-data.html">Data &amp; Digitization</a></li>
+          <li><a href="program-datacenter.html">Data Centers</a></li>
+          <li><a href="program-pm.html">Enterprise Management Systems</a></li>
+          <li><a href="program-education.html">Education &amp; Training</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Industries</h5>
+        <ul>
+          <li><a href="industry-public.html">Public Service</a></li>
+          <li><a href="industry-healthcare.html">Healthcare</a></li>
+          <li><a href="industry-financial.html">Financial Services</a></li>
+          <li><a href="industry-banking.html">Banking</a></li>
+          <li><a href="industries.html">View all →</a></li>
+        </ul>
+        <h5 class="footer-h5-stack">Markets</h5>
+        <ul>
+          <li><a href="markets.html">Markets</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Our Team</h5>
+        <ul>
+          <li><a href="about.html">Our Team</a></li>
+        </ul>
+        <h5 class="footer-h5-stack">Partner With Us</h5>
+        <ul>
+          <li><a href="contact.html">Partnership inquiry</a></li>
+          <li><a href="contact.html">General inquiry</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <div>© 2026 Genosis Inc. All rights reserved.</div>
+      <div>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/cookies.html">Cookies</a>
+        <a href="/accessibility.html">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================ DATA ============================================================ */
+const PILLARS = [
+  { name:"Digital Infrastructure", tag:"The foundation", icon:"network",
+    d:"Connectivity, cloud services, data storage, cybersecurity, and the systems government runs on every day." },
+  { name:"Sovereign Compute & AI", tag:"National computing", icon:"cpu",
+    d:"NVIDIA Vera Rubin-class systems, HPC clusters, and sovereign cloud — powering government operations, research, public services, and national AI." },
+  { name:"Data & Intelligence", tag:"Information → insight", icon:"database",
+    d:"Analytics, forecasting, reporting, knowledge management, and decision support that turn raw data into action." },
+  { name:"Public Services & Systems", tag:"Institutional platforms", icon:"building",
+    d:"Identity, healthcare, education, tax, land, transportation, licensing, and public-service delivery — integrated and modern." },
+  { name:"Workforce Development", tag:"People & capability", icon:"users",
+    d:"Training programs, university partnerships, technical certifications, readiness initiatives, and knowledge transfer." },
+  { name:"Economic Participation", tag:"Innovation & growth", icon:"growth",
+    d:"Letting businesses, entrepreneurs, researchers, and institutions leverage national infrastructure for growth and innovation." },
+];
+
+const FLYWHEEL = [
+  { t:"Infrastructure", d:"enables services", icon:"network" },
+  { t:"Services", d:"generate data", icon:"building" },
+  { t:"Data", d:"creates intelligence", icon:"database" },
+  { t:"Intelligence", d:"improves decisions", icon:"spark" },
+  { t:"Decisions", d:"strengthen institutions", icon:"shield" },
+  { t:"Institutions", d:"create opportunity", icon:"check" },
+  { t:"Growth", d:"funds new infrastructure — the cycle repeats", icon:"growth", loop:true },
+];
+
+const PHASES = [
+  { name:"National Assessment", tag:"Baseline", accent:"var(--sky)",
+    d:"Establish a clear picture of where the nation stands: government operations, existing systems, infrastructure maturity, economic participation, workforce readiness, digital adoption, and cybersecurity posture.",
+    out:"National Digital Readiness Assessment" },
+  { name:"Infrastructure Blueprint", tag:"10–20 year roadmap", accent:"var(--gold)",
+    d:"Develop a long-horizon roadmap spanning identity, data, security, cloud, public services, artificial intelligence, workforce development, and governance.",
+    out:"National Infrastructure Master Plan" },
+  { name:"Sovereign Infrastructure", tag:"The backbone", accent:"var(--jade)",
+    d:"Build the national digital backbone: national cloud and AI infrastructure, government data platforms, cybersecurity operations, identity systems, and interoperability frameworks.",
+    out:"National Digital Backbone" },
+  { name:"National Digitization", tag:"Legacy → assets", accent:"var(--ember)",
+    d:"Convert legacy information into usable national assets — land, tax, healthcare, business registration, government archives, licensing, and educational records.",
+    out:"Digitized, searchable, secure national information" },
+  { name:"Public Service Modernization", tag:"Integrated services", accent:"var(--gold-soft)",
+    d:"Deploy integrated systems across identity, healthcare, education, revenue administration, transportation, land management, public works, and enterprise management.",
+    out:"Integrated Digital Public Services" },
+  { name:"Adoption & Capability", tag:"People, not just tech", accent:"var(--sky)",
+    d:"Technology alone doesn't transform nations — people do. Government workforce training, citizen onboarding, business participation, university partnerships, leadership development, digital literacy, and operational support.",
+    out:"National adoption and long-term sustainability" },
+];
+
+const ERAS = [
+  { yr:"Years 1–3", phase:"Deployment", icon:"",
+    d:"Infrastructure and foundational systems are deployed. Governments begin digitizing operations, citizens begin accessing digital services, and businesses begin participating through digital platforms. Technology is still viewed as a project." },
+  { yr:"Years 3–5", phase:"Institutional transformation",
+    d:"Digital workflows become common, data sharing improves, and service delivery becomes faster and more efficient. Technology becomes part of operations." },
+  { yr:"Years 5–8", phase:"Societal normalization",
+    d:"Citizens expect digital identity, online services, digital payments, and mobile access. Businesses expect digital registration and faster approvals. Government operates on shared data, analytics, and AI-assisted decision support. Technology becomes infrastructure." },
+  { yr:"Years 8–15", phase:"Capability matures",
+    d:"Strong institutional memory, a trained workforce, high-quality national data, advanced analytics, research capacity, and innovation ecosystems. Modernization evolves into optimization." },
+  { yr:"Years 15–25", phase:"Strategic national asset",
+    d:"The infrastructure ranks alongside roads, ports, and utilities — valued not by hardware, but by institutional capability, economic activity, workforce readiness, data quality, and national competitiveness." },
+];
+
+const EXPECTS = [
+  { who:"Citizens expect", icon:"users", items:["Digital identity","Online services","Digital payments","Mobile accessibility","Faster service delivery"] },
+  { who:"Businesses expect", icon:"growth", items:["Digital registration","Digital compliance","Faster approvals","Integrated services"] },
+  { who:"Government operates with", icon:"network", items:["Shared data","Analytics","AI-assisted decisions","Coordinated workflows"] },
+];
+
+const ROLES = [
+  { name:"Architect", icon:"compass", d:"Designing national modernization strategies and infrastructure roadmaps." },
+  { name:"Integrator", icon:"network", d:"Connecting technology, institutions, stakeholders, and systems into one coherent whole." },
+  { name:"Builder", icon:"layers", d:"Deploying the infrastructure, platforms, and operational frameworks that run the nation." },
+  { name:"Operator", icon:"cog", d:"Supporting implementation, adoption, and systems hand-off for long-term success." },
+  { name:"Capability Partner", icon:"users", d:"Helping governments create self-sustaining digital ecosystems that endure." },
+];
+
+const VALUE = [
+  { t:"Institutional capability", icon:"shield" },
+  { t:"Economic activity", icon:"growth" },
+  { t:"Workforce readiness", icon:"users" },
+  { t:"Data quality", icon:"database" },
+  { t:"Public service performance", icon:"building" },
+  { t:"National competitiveness", icon:"network" },
+];
+
+/* ============================================================ ICONS ============================================================ */
+function icon(name, color, size) {
+  size = size || 22; color = color || 'var(--bone)';
+  const o = '<svg width="'+size+'" height="'+size+'" viewBox="0 0 24 24" fill="none" stroke="'+color+'" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">';
+  const P = {
+    network: '<circle cx="12" cy="5" r="2.2"/><circle cx="5" cy="18" r="2.2"/><circle cx="19" cy="18" r="2.2"/><path d="M12 7.2v3.3M11 12l-4.5 4M13 12l4.5 4"/>',
+    cpu: '<rect x="5" y="5" width="14" height="14" rx="1.5"/><rect x="9" y="9" width="6" height="6" rx="0.5"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/>',
+    database: '<ellipse cx="12" cy="5" rx="7" ry="3"/><path d="M5 5v7c0 1.6 3.1 3 7 3s7-1.4 7-3V5"/><path d="M5 12v5c0 1.6 3.1 3 7 3s7-1.4 7-3v-5"/>',
+    building: '<path d="M3 21h18M5 21V6l7-3 7 3v15M9 9h2M9 13h2M13 9h2M13 13h2M10 21v-4h4v4"/>',
+    users: '<circle cx="9" cy="8" r="3"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><path d="M16 5.3a3 3 0 0 1 0 5.4M20.5 20a5.5 5.5 0 0 0-4-5.3"/>',
+    growth: '<path d="M3 17l5.5-5.5 4 4L21 6"/><path d="M15 6h6v6"/>',
+    spark: '<path d="M12 2l2.2 6.8L21 11l-6.8 2.2L12 20l-2.2-6.8L3 11l6.8-2.2Z"/>',
+    shield: '<path d="M12 3l8 3v6c0 4.8-3.4 7.9-8 9-4.6-1.1-8-4.2-8-9V6l8-3Z"/><path d="M9 12l2 2 4-4"/>',
+    check: '<path d="M5 13l4 4L19 7"/>',
+    cog: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M5 5l2 2M17 17l2 2M2 12h3M19 12h3M5 19l2-2M17 7l2-2"/>',
+    layers: '<path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5"/>',
+    compass: '<circle cx="12" cy="12" r="9"/><path d="M15.5 8.5 13 13l-4.5 2.5L11 11l4.5-2.5Z"/>',
+    arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
+  };
+  return o + (P[name] || P.spark) + '</svg>';
+}
+
+/* ============================================================ RENDER ============================================================ */
+// pillars
+document.getElementById('pillars').innerHTML = PILLARS.map((p,i)=>
+  '<div class="reveal" style="transition-delay:'+(i*70)+'ms">'+
+    '<div class="pcard card-lift">'+
+      '<div class="ic">'+icon(p.icon,'var(--gold)',26)+'</div>'+
+      '<span class="tag">'+p.tag+'</span>'+
+      '<h3>'+p.name+'</h3>'+
+      '<p>'+p.d+'</p>'+
+    '</div></div>'
+).join('');
+
+// flywheel pipeline
+document.getElementById('flywheel-flow').innerHTML = FLYWHEEL.map((s,i)=>{
+  const loop = s.loop ? ' loop' : '';
+  const c = s.loop ? 'var(--gold)' : 'var(--mist)';
+  let html = '<div class="flowstep"><div class="flowbox'+loop+'">'+icon(s.icon,c,22)+
+    '<h4>'+s.t+'</h4><p>'+s.d+'</p></div></div>';
+  if (i < FLYWHEEL.length-1) html += '<div class="arrow-wrap">'+icon('arrow','var(--gold)',18)+'</div>';
+  return html;
+}).join('');
+
+// framework accordion
+(function(){
+  const root = document.getElementById('phases');
+  root.innerHTML = PHASES.map((p,i)=>{
+    const open = i===0 ? ' open' : '';
+    const num = 'P'+(i+1);
+    return '<div class="div-row'+open+'" data-i="'+i+'" style="border-left-color:'+p.accent+';'+(i===0?'border-color:'+p.accent+';':'')+'">'+
+      '<div class="head">'+
+        '<span class="n" style="color:'+p.accent+'">'+num+'</span>'+
+        '<h3>'+p.name+'</h3>'+
+        '<span class="tag" style="color:'+p.accent+'">'+p.tag+'</span>'+
+      '</div>'+
+      '<div class="body"><p>'+p.d+'</p>'+
+        '<span class="outcome" style="color:'+p.accent+';border-color:'+p.accent+'">'+icon('arrow',p.accent,13)+'Outcome — '+p.out+'</span>'+
+      '</div>'+
+    '</div>';
+  }).join('');
+  root.querySelectorAll('.div-row').forEach(row => {
+    row.addEventListener('click', () => {
+      root.querySelectorAll('.div-row').forEach(r => {
+        r.classList.remove('open');
+        r.style.borderColor = 'var(--line)';
+        r.style.borderLeftColor = PHASES[+r.dataset.i].accent;
+      });
+      row.classList.add('open');
+      const a = PHASES[+row.dataset.i].accent;
+      row.style.borderColor = a; row.style.borderLeftColor = a;
+    });
+  });
+})();
+
+// timeline
+document.getElementById('tline').innerHTML =
+  '<div class="evo">' + ERAS.map((e,i)=>{
+    const heights = [30,46,62,80,100];
+    const colors = ['var(--sapphire)','var(--deep-soft)','var(--sky)','var(--jade)','var(--metal)'];
+    return '<div class="evo-col reveal" style="transition-delay:'+(i*90)+'ms">'+
+      '<div class="evo-bars"><div class="evo-bar" style="height:'+heights[i]+'%"></div></div>'+
+      '<div class="evo-yr-label">Years</div>'+
+      '<div class="evo-year">'+e.yr.replace('Years ','')+'</div>'+
+      '<div class="evo-phase" style="color:'+colors[i]+'">'+e.phase+'</div>'+
+      '<div class="evo-desc">'+e.d+'</div>'+
+    '</div>';
+  }).join('') + '</div>';
+
+// expectations
+document.getElementById('expects').innerHTML = EXPECTS.map((x,i)=>
+  '<div class="reveal" style="transition-delay:'+(i*90)+'ms">'+
+    '<div class="scard" style="border-left-color:var(--sky)">'+
+      icon(x.icon,'var(--sky)',24)+
+      '<h4>'+x.who+'</h4>'+
+      '<ul>'+x.items.map(it=>'<li>'+it+'</li>').join('')+'</ul>'+
+    '</div></div>'
+).join('');
+
+// roles
+document.getElementById('roles').innerHTML = ROLES.map((r,i)=>
+  '<div class="reveal" style="transition-delay:'+(i*70)+'ms">'+
+    '<div class="pcard card-lift" style="border-top-color:var(--jade)">'+
+      '<div class="ic">'+icon(r.icon,'var(--jade)',26)+'</div>'+
+      '<span class="tag">Role 0'+(i+1)+'</span>'+
+      '<h3>'+r.name+'</h3>'+
+      '<p>'+r.d+'</p>'+
+    '</div></div>'
+).join('');
+
+// value dimensions
+document.getElementById('value').innerHTML = VALUE.map((v,i)=>
+  '<div class="reveal" style="transition-delay:'+(i*70)+'ms">'+
+    '<div class="scard" style="border-left-color:var(--gold)">'+
+      '<div style="display:flex;align-items:center;gap:14px">'+
+        icon(v.icon,'var(--gold)',22)+
+        '<h4 style="margin:0;font-size:19px">'+v.t+'</h4>'+
+      '</div>'+
+    '</div></div>'
+).join('');
+
+/* ============================================================ SCROLL REVEAL ============================================================ */
+(function(){
+  const els = document.querySelectorAll('.reveal');
+  if (typeof IntersectionObserver === 'undefined') { els.forEach(e => e.classList.add('seen')); return; }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('seen'); });
+  }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
+  els.forEach(el => {
+    io.observe(el);
+    const r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('seen');
+  });
+  setTimeout(() => {
+    document.querySelectorAll('.reveal').forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('seen');
+    });
+  }, 600);
+})();
+
+/* ============================================================ SCROLLSPY ============================================================ */
+(function(){
+  const SECTIONS = ['intro','vision','ecosystem','flywheel','framework','timeline','role','end'];
+  const navBtns = document.querySelectorAll('.sidenav button');
+  const rail = document.getElementById('rail-fill');
+  let lastId = null, ticking = false;
+  function pick(){
+    ticking = false;
+    const line = window.innerHeight * 0.32;
+    let current = SECTIONS[0];
+    for (const id of SECTIONS) {
+      const el = document.getElementById(id);
+      if (!el) continue;
+      if (el.getBoundingClientRect().top <= line) current = id;
+    }
+    if (current !== lastId) {
+      lastId = current;
+      navBtns.forEach(b => b.classList.toggle('active', b.dataset.id === current));
+      const idx = SECTIONS.indexOf(current);
+      rail.style.height = ((idx+1) / SECTIONS.length * 100) + '%';
+    }
+  }
+  function onScroll(){ if (ticking) return; ticking = true; requestAnimationFrame(pick); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  pick();
+  navBtns.forEach(b => b.addEventListener('click', () => goto(b.dataset.id)));
+})();
+
+function goto(id){ const el = document.getElementById(id); if (el) el.scrollIntoView({ behavior:'smooth', block:'start' }); }
+</script>
+<script src="main.js"></script>
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
