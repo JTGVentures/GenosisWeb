@@ -1890,7 +1890,11 @@
 
   /* ===== MOBILE NAV ===== */
   @media (max-width: 1100px) {
-    .mobile-toggle { display: inline-flex; }
+    .mobile-toggle {
+      display: inline-flex;
+      /* push the toggle to the far right, away from the logo */
+      margin-left: auto;
+    }
     /* Hide desktop menu on mobile — mobile uses separate drawer below */
     nav.top ul.nav-menu { display: none; }
   }
